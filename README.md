@@ -18,13 +18,13 @@
 
 # UI截图
 
-![](screenshot/1.png)
-![](screenshot/2.png)
-![](screenshot/3.png)
-![](screenshot/4.png)
-![](screenshot/5.png)
-![](screenshot/6.png)
-![](screenshot/7.png)
-![](screenshot/8.png)
-![](screenshot/9.png)
-![](screenshot/10.png)
+![](others/1.png)
+![](others/2.png)
+![](others/3.png)
+![](others/4.png)
+![](others/5.png)
+![](others/6.png)
+![](others/7.png)
+![](others/8.png)
+![](others/9.png)
+![](others/10.png)
