@@ -5,4 +5,4 @@
 * 后端 - Java / Struts2 / Spring / iBatis
 * 数据库 - MySQL
 
-![screenshot/1.png]
+![](screenshot/1.png)
