@@ -16,7 +16,7 @@
 
 
 
-# 截图
+# UI截图
 
 ![](screenshot/1.png)
 ![](screenshot/2.png)
