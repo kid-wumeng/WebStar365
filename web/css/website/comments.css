@@ -1,0 +1,116 @@
+.wrapper { width: 700px; }
+.wrapper .websiteComments .comment { width: 700px; }
+.wrapper .websiteComments .comment .userFace { width: 50px; height: 50px; }
+.wrapper .websiteComments .comment .userFace img { width: 50px; height: 50px; }
+.wrapper .websiteComments .comment .row1 { width: 638px; height: 18px; line-height: 18px; }
+.wrapper .websiteComments .comment .row1 .commentUser { height: 18px; line-height: 18px; }
+.wrapper .websiteComments .comment .row1 .commentStar { height: 18px; line-height: 18px; }
+.wrapper .websiteComments .comment .commentContent p { width: 638px; max-height: 108px; line-height: 18px; }
+.wrapper .websiteComments .comment .row2 { width: 638px; }
+.wrapper .websiteComments .comment .row2 .commentPublishDateTime { height: 18px; line-height: 18px; }
+.wrapper .page .targetPageNo input { width: 24px; height: 24px; }
+
+
+.wrapper h1 { font-size: 20px; font-weight: bold; color: #4a4a4a; }
+.wrapper h1 a { font-size: 20px; font-weight: bold; color: #0099cc; }
+.wrapper .websiteComments .comment .row1 .commentUser { font-size: 12px; color: #0099ff; }
+.wrapper .websiteComments .comment .row1 .commentUser:hover,
+.wrapper .websiteComments .comment .row1 .commentUser:focus { color: #8552a1; }
+.wrapper .websiteComments .comment .row2 .commentPublishDateTime { font-size: 12px; color: #999; }
+.wrapper .websiteComments .comment .commentContent p { font-size: 12px; color: #4a4a4a; }
+.wrapper .websiteComments .comment .commentContent .commentEcho { font-size: 12px; color: #0099ff; }
+.wrapper .websiteComments .comment .commentContent .commentEcho:hover,
+.wrapper .websiteComments .comment .commentContent .commentEcho:focus { color: #8552a1; }
+.wrapper .websiteComments .comment .commentContent .commentEcho span { font-family:Tahoma, Geneva, sans-serif; font-size: 12px; }
+.wrapper .page .pageButton { color: #666; }
+.wrapper .page .pageButton:hover,
+.wrapper .page .pageButton:focus { color: #fff; }
+.wrapper .page .pageButton:active { color: #666; }
+.wrapper .page .targetPageNo input { text-align: center; }
+
+body {
+    background: url(../../images/icons/common/background.gif) center repeat;
+}
+.wrapper {
+    margin: 25px auto 100px;
+    padding: 7px 25px 20px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+.wrapper h1 {
+    margin: 15px 0 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.wrapper .websiteComments {
+    text-align: right;
+}
+.wrapper .websiteComments .comment {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #C8C8C8;
+    overflow: hidden;
+}
+.wrapper .websiteComments .comment .userFace {
+    float: left;
+    margin-top: 3px;
+}
+.wrapper .websiteComments .comment .row1 {
+    float: right;
+}
+.wrapper .websiteComments .comment .row1 .commentUser {
+    display: block;
+    float: left;
+}
+.wrapper .websiteComments .comment .row1 .commentStar {
+    display: block;
+    float: right;
+}
+.wrapper .websiteComments .comment .commentContent {
+    float: right;
+    margin: 3px 0;
+    text-align: left;
+    overflow: hidden;
+}
+.wrapper .websiteComments .comment .commentContent p {
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.wrapper .websiteComments .comment .row2 {
+    float: right;
+    margin-top: 1px;
+}
+.wrapper .websiteComments .comment .row2 .commentPublishDateTime{
+    display: block;
+    float: left; 
+}
+.wrapper .page {
+    padding: 12px 15px;
+    text-align: right;
+    background-color: #F2F2F2;
+    clear: left; 
+}
+.wrapper .page .pageButton {
+    margin-right: 3px;
+    padding: 6px 8px;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+.wrapper .page .pageButton:hover,
+.wrapper .page .pageButton:focus {
+    background-color: #74787c;
+    border: 1px solid #74787c;
+}
+.wrapper .page .pageButton:active {
+    background: none;
+    border: 1px solid #666;
+}
+.wrapper .page .pageNoAndNum {
+    margin: 0 15px 0 10px;
+}
+.searchComments {
+    display: none;
+}

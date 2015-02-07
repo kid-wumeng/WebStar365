@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">  
+  
+<sqlMapConfig>  
+    <!-- 配置对象关系映射文件 -->  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/Cat.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/Attr.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/AttrSynonym.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/Website.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/Comment.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/Echo.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/Article.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/WebsiteRecommend.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/User.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/UserAct.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/Area.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/Admin.xml" />  
+    <sqlMap resource="com/webstar365/config/mybatis/sqlmap/Notice.xml" />  
+</sqlMapConfig>  

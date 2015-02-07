@@ -1,0 +1,68 @@
+.wrapper { width: 1000px; }
+.wrapper .main { width: 850px; }
+.wrapper .main form .newAttrSynonymName input { width: 120px; }
+.wrapper .main table tr td.delete { width: 60px; }
+
+.wrapper .main h2 { font-size: 20px; }
+.wrapper .main form .newAttrSynonymName label { font-size: 12px; }
+.wrapper .main table tr td span { font-size: 12px; }
+.wrapper .main table tr td a { font-size: 12px; }
+.wrapper .main table tr td.attrSynonymName a { color: #00cc66; }
+.wrapper .main table tr td.delete { color: #ff6666; }
+
+.wrapper {
+    margin: 20px auto 60px;
+    overflow: hidden;
+}
+.wrapper .main {
+    float: left;
+}
+.wrapper .main h2 {
+    margin: 20px 15px 18px 15px;
+}
+.wrapper .main form {
+    margin: 15px 17px;
+    overflow: hidden;
+}
+.wrapper .main form div{
+    float: left;
+    margin: 10px 0 5px 0;
+}
+.wrapper .main form .newAttrSynonymName input { 
+    padding: 2px 3px;
+    background-color: #ffffcd; 
+    border: 1px groove #c8c8c8;
+}
+.wrapper .main form .add {
+    display: block;
+    float: left;
+    margin: 3px 0 0 15px;
+    padding: 5px 8px;
+}
+.wrapper .main hr {
+    margin: 24px 16px 12px 15px;
+    border: none;
+    border-top: 1px dashed #C8C8C8;
+}
+.wrapper .main table {
+    margin: 12px 16px; 
+    border-collapse: collapse;
+}
+.wrapper .main table tr th {
+    padding: 5px;
+    border: 1px solid #666666;
+}
+.wrapper .main table tr td {
+    padding: 5px;
+    border: 1px solid #c8c8c8;
+}
+.wrapper .main table tr td.attrSynonymName span {
+    float: left;
+    margin-right: 5px;
+}
+.wrapper .main table tr td.attrSynonymName a {
+    float: right;
+}
+.wrapper .main table tr td.delete {
+    text-align: center;
+}

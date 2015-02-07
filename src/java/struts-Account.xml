@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 路径：src/java/ -->
+
+<struts>
+    
+    <!-- 帐号Action -->
+    <package name="account" extends="struts-default" namespace="/account">
+                
+        <!-- 拦截器 -->
+        <interceptors>
+            <!-- 自定义拦截器 -->
+            <interceptor name="userCookieInterceptor" class="com.webstar365.action.interceptor.UserCookieInterceptor" />      <!-- 检测用户是否存在Cookie -->
+            <interceptor name="userLoginInterceptor" class="com.webstar365.action.interceptor.UserLoginInterceptor" />        <!-- 检测用户是否登录 -->
+            <interceptor name="userNoLoginInterceptor" class="com.webstar365.action.interceptor.UserNoLoginInterceptor" />    <!-- 检测用户是否尚未登录 -->
+            <interceptor name="adminNoLoginInterceptor" class="com.webstar365.action.interceptor.AdminNoLoginInterceptor" />  <!-- 检测管理员是否尚未登录 --> 
+        </interceptors>
+        
+        
+        <!-- 全局跳转 -->
+        <global-results>
+            <result name="error">/special/error.jsp</result><!-- 错误页 -->
+            <result name="input">/special/error.jsp</result><!-- 错误页 -->
+            <result name="index">/index.jsp</result><!-- 主页 -->
+        </global-results>
+        
+        
+        <!-- 新用户注册 -->
+        <action name="userRegister" class="accountAction" method="userRegister">
+            <interceptor-ref name="userCookieInterceptor" />   <!-- 检测用户Cookie -->
+            <interceptor-ref name="userNoLoginInterceptor" />  <!-- 检测用户未登录 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">../ajax/result.jsp</result>
+            <result name="error">../ajax/result.jsp</result>
+        </action>
+        
+        
+        <!-- 发送新用户验证邮件 -->
+        <action name="sendNewUserValidMail" class="accountAction" method="sendNewUserValidMail">
+            <interceptor-ref name="userCookieInterceptor" />   <!-- 检测用户Cookie -->
+            <interceptor-ref name="userNoLoginInterceptor" />  <!-- 检测用户未登录 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/account/sendNewUserValidMailSuccess.jsp</result>
+            <result name="error">/account/newUserMailValidateError.jsp</result>
+        </action>
+        
+        
+        <!-- 新用户邮件验证 -->
+        <action name="newUserMailValidate" class="accountAction" method="newUserMailValidate">
+            <result name="success">/account/newUserMailValidateSuccess.jsp</result>
+            <result name="error">/account/newUserMailValidateError.jsp</result>
+        </action>
+        
+        
+        <!-- 用户登录 -->
+        <action name="userLogin" class="accountAction" method="userLogin">
+            <interceptor-ref name="userCookieInterceptor" />   <!-- 检测用户Cookie -->
+            <interceptor-ref name="userNoLoginInterceptor" />  <!-- 检测用户未登录 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/ajax/result.jsp</result>
+            <result name="error">/ajax/result.jsp</result>
+        </action>
+        
+        
+        <!-- 用户退出 -->
+        <action name="userLogout" class="accountAction" method="userLogout">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/index.jsp</result>
+        </action>
+        
+        
+        <!-- 发送用户密码重置验证邮件 -->
+        <action name="sendUserPassResetValidMail" class="accountAction" method="sendUserPassResetValidMail">
+            <interceptor-ref name="userCookieInterceptor" />   <!-- 检测用户Cookie -->
+            <interceptor-ref name="userNoLoginInterceptor" />  <!-- 检测用户未登录 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/account/sendUserPassResetValidMailResult.jsp</result>
+            <result name="error">/account/sendUserPassResetValidMailResult.jsp</result>
+        </action>
+        
+        
+        <!-- 用户密码重置邮件验证 -->
+        <action name="userPassResetMailValidate" class="accountAction" method="userPassResetMailValidate">
+            <interceptor-ref name="userCookieInterceptor" />   <!-- 检测用户Cookie -->
+            <interceptor-ref name="userNoLoginInterceptor" />  <!-- 检测用户未登录 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/account/resetUserPass.jsp</result>
+            <result name="error">/account/userPassResetMailValidateError.jsp</result>
+        </action>
+        
+        
+        <!-- 重置用户密码 -->
+        <action name="resetUserPass" class="accountAction" method="resetUserPass">
+            <interceptor-ref name="userCookieInterceptor" />   <!-- 检测用户Cookie -->
+            <interceptor-ref name="userNoLoginInterceptor" />  <!-- 检测用户未登录 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/account/resetUserPassResult.jsp</result>
+            <result name="error">/account/resetUserPassResult.jsp</result>
+        </action>
+        
+        
+        <!-- 管理员登录 -->
+        <action name="adminLogin" class="accountAction" method="adminLogin">
+            <interceptor-ref name="adminNoLoginInterceptor" />  <!-- 检测管理员未登录 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success" type="redirect">/admin/newNotice</result>
+            <result name="input">/account/adminLogin.jsp</result>
+            <result name="passFailed" type="redirect">/admin/newNotice</result>
+        </action>
+        
+    </package>
+    
+</struts>

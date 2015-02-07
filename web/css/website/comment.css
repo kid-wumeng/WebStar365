@@ -1,0 +1,173 @@
+.wrapper { width: 600px; }
+.wrapper .comment .userFace { width: 120px; height: 120px; }
+.wrapper .comment .userFace img { width: 120px; height: 120px; }
+.wrapper .comment .row1 { width: 480px; }
+.wrapper .comment .row2 { width: 480px; }
+.wrapper .comment .commentContent { width: 470px; line-height: 18px; }
+.wrapper .commentEchoes .echoLabel { height:33px; line-height: 35px; }
+.wrapper .commentEchoes .addEcho form  { width: 308px; }
+.wrapper .commentEchoes .addEcho form .echoContent { width: 300px; height: 110px; }
+.wrapper .commentEchoes .echo { width: 600px; }
+.wrapper .commentEchoes .echo .userFace { width: 50px; height: 50px; }
+.wrapper .commentEchoes .echo .userFace img { width: 50px; height: 50px; }
+.wrapper .commentEchoes .echo .row1 { width: 550px; height: 18px; line-height: 18px; }
+.wrapper .commentEchoes .echo .row1 .echoUser { height: 18px; line-height: 18px; }
+.wrapper .commentEchoes .echo .echoContent { width: 535px; }
+.wrapper .commentEchoes .echo .row2 { width: 550px; }
+.wrapper .commentEchoes .echo .row2 .echoPublishDateTime { height: 18px; line-height: 18px; }
+.wrapper .commentEchoes .page .targetPageNo input { width: 24px; height: 24px; }
+
+
+.wrapper .comment .row1 { font-size: 20px; font-weight: bold; }
+.wrapper .comment .row1 .commentUser { font-size: 20px; font-weight: bold; color: #0099cc; }
+.wrapper .comment .row1 .commentUser:hover,
+.wrapper .comment .row1 .commentUser:focus { color: #8552a1; }
+.wrapper .comment .row1 .commentWebsite { font-size: 20px; font-weight: bold; color: #0099cc; }
+.wrapper .comment .row1 .commentWebsite:hover,
+.wrapper .comment .row1 .commentWebsite:focus { color: #8552a1; }
+.wrapper .comment .row1 .commentStar {  width: 122px; }
+.wrapper .comment .row2 .commentPublishDateTime { font-size: 12px; color: #c8c8c8; }
+.wrapper .comment .commentContent { font-size: 12px; color: #4a4a4a; }
+.wrapper .commentEchoes .echoLabel { color: #fff; }
+.wrapper .commentEchoes .addEcho form .echoContent { font-size: 12px; }
+.wrapper .commentEchoes .addEcho form .publish { font-size: 12px; color: #fff; }
+.wrapper .commentEchoes .echo .row1 .echoUser { font-size: 12px; color: #0099ff; }
+.wrapper .commentEchoes .echo .row1 .echoUser:hover,
+.wrapper .commentEchoes .echo .row1 .echoUser:focus { color: #8552a1; }
+.wrapper .commentEchoes .echo .row2 .echoPublishDateTime { font-size: 12px; color: #999; }
+.wrapper .commentEchoes .echo .echoContent { font-size: 12px; color: #4a4a4a; }
+.wrapper .commentEchoes .page .pageButton { color: #666; }
+.wrapper .commentEchoes .page .pageButton:hover,
+.wrapper .commentEchoes .page .pageButton:focus { color: #fff; }
+.wrapper .commentEchoes .page .pageButton:active { color: #666; }
+.wrapper .commentEchoes .page .targetPageNo input { text-align: center; }
+
+body {
+    background: url(../../images/icons/common/background.gif) center repeat;
+}
+.wrapper {
+    margin: 25px auto 100px;
+    padding: 25px 26px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+.wrapper .comment {
+    overflow: hidden;
+}
+.wrapper .comment .userFace {
+    float: left;
+}
+.wrapper .comment .row1 {
+    float: right;
+    margin-bottom: 3px;
+}
+.wrapper .comment .row1 .commentUser { 
+    margin-left: 10px;
+}
+.wrapper .comment .row1 .commentStar {
+    display: block; 
+    float: right;
+}
+.wrapper .comment .row1 .commentStar img { 
+    margin-top: 3px;
+}
+.wrapper .comment .row2 {
+    float: right;
+    margin-bottom: 10px;
+}
+.wrapper .comment .row2 .commentPublishDateTime { 
+    margin-left: 10px;
+}
+.wrapper .comment .commentContent {
+    float: right;
+    margin-left: 10px;
+}
+.wrapper .commentEchoes {
+    margin-top: 40px;
+}
+.wrapper .commentEchoes .echoLabel {
+    padding-left: 10px;
+    background-color: #99ccff;
+}
+.wrapper .commentEchoes .addEcho form {
+    margin: 20px auto;
+}
+.wrapper .commentEchoes .addEcho form .echoContent {
+    border: 1px groove #c8c8c8;
+    margin-bottom: 20px;
+    padding: 4px 3px;
+}
+.wrapper .commentEchoes .addEcho form .publish {
+    margin-left: 240px;
+    padding: 7px 10px 6px;
+    background-color: #99ccff;
+    border-radius: 2px;
+}
+.wrapper .commentEchoes .addEcho form .publish:hover,
+.wrapper .commentEchoes .addEcho form .publish:focus {
+    background-color: #6699ff;
+}
+.wrapper .commentEchoes .addEcho form .publish:active {
+    background-color: #99ccff;
+}
+.wrapper .commentEchoes .echo {
+    margin: 20px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #C8C8C8;
+    overflow: hidden;
+}
+.wrapper .commentEchoes .echo .userFace {
+    float: left;
+    margin-top: 3px;
+}
+.wrapper .commentEchoes .echo .row1 {
+    float: right;
+}
+.wrapper .commentEchoes .echo .row1 .echoUser {
+    display: block;
+    float: left;
+    margin-left: 15px;
+}
+.wrapper .commentEchoes .echo .echoContent {
+    float: right;
+    margin: 3px 0;
+    text-align: left;
+    line-height: 18px;
+}
+.wrapper .commentEchoes .echo .row2 {
+    float: right;
+}
+.wrapper .commentEchoes .echo .row2 .echoPublishDateTime {
+    display: block;
+    float: left; 
+    margin-left: 15px;
+}
+.wrapper .commentEchoes .page {
+    padding: 16px 15px;
+    text-align: right;
+    background-color: #F2F2F2;
+    clear: left; 
+}
+.wrapper .commentEchoes .page .pageButton {
+    margin-right: 3px;
+    padding: 6px 8px;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+.wrapper .commentEchoes .page .pageButton:hover,
+.wrapper .commentEchoes .page .pageButton:focus {
+    background-color: #74787c;
+    border: 1px solid #74787c;
+}
+.wrapper .commentEchoes .page .pageButton:active {
+    background: none;
+    border: 1px solid #666;
+}
+.wrapper .commentEchoes .page .pageNoAndNum {
+    margin: 0 15px 0 10px;
+}
+.wrapper .commentEchoes .searchEchos {
+    display: none;
+}

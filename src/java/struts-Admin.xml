@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 路径：src/java/ -->
+
+<struts>
+    
+    <!-- 管理员Action -->
+    <package name="admin" extends="struts-default" namespace="/admin">
+        
+        <!-- 拦截器 -->
+        <interceptors>
+            <!-- 自定义拦截器 -->
+            <interceptor name="adminLoginInterceptor" class="com.webstar365.action.interceptor.AdminLoginInterceptor" />  <!-- 检测管理员是否登录 -->
+            <!-- 自定义拦截器栈 -->
+            <interceptor-stack name="adminStack">
+                <interceptor-ref name="adminLoginInterceptor" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+        <!-- 默认拦截器 -->
+        <default-interceptor-ref name="adminStack" />
+        
+        
+        <!-- 全局跳转 -->
+        <global-results>
+             <result name="login" type="redirect">../account/adminLogin.jsp</result><!-- 登录页 -->
+             <result name="error">/special/error_admin.jsp</result><!-- 错误页 -->
+        </global-results>
+        
+        
+        <!-- 显示新公告 -->
+        <action name="newNotice" class="adminAction" method="showNewNotice">
+            <result name="success">/admin/newNotice.jsp</result>
+        </action>
+        
+        
+        <!-- 核对网站 -->
+        <action name="checkWebsite" class="adminAction" method="checkWebsite">
+            <result name="success">/ajax/result.jsp</result>
+        </action>
+        
+        
+        <!-- 编辑搜索条件 -->
+        <action name="editSearchCondition" class="adminAction" method="editSearchCondition">
+            <result name="success">/admin/editSearchCondition.jsp</result>
+        </action>
+        
+        
+        <!-- 搜索网站 -->
+        <action name="searchWebsites" class="adminAction" method="searchWebsites">
+            <result name="success">/admin/showWebsites.jsp</result>
+        </action>
+        
+        
+        <!-- 编辑属性 -->
+        <action name="editAttrs" class="adminAction" method="editAttrs">
+            <result name="success">/admin/editAttrs.jsp</result>
+        </action>
+        
+        
+        <!-- 编辑属性近义词 -->
+        <action name="editAttrSynonyms" class="adminAction" method="editAttrSynonyms">
+            <result name="success">/admin/editAttrSynonyms.jsp</result>
+        </action>
+        
+        
+        <!-- 编辑一个网站 -->
+        <action name="editWebsite" class="adminAction" method="editWebsite">
+            <result name="success">/admin/editWebsite.jsp</result>
+        </action>
+        
+        
+        <!-- 编辑一个新网站 -->
+        <action name="editNewWebsite" class="adminAction" method="editNewWebsite">
+            <result name="success">/admin/editNewWebsite.jsp</result>
+        </action>
+        
+        
+        <!-- 编辑多个新网站 -->
+        <action name="editNewWebsites" class="adminAction" method="editNewWebsites">
+            <result name="success">/admin/editNewWebsites.jsp</result>
+        </action>
+        
+        
+        <!-- 编辑网站推荐 -->
+        <action name="editWebsiteRecommends" class="adminAction" method="editWebsiteRecommends">
+            <result name="success">/admin/editWebsiteRecommends.jsp</result>
+        </action>
+        
+        
+        <!-- 添加一个属性 -->
+        <action name="addAttr" class="adminAction" method="addAttr">
+            <result name="success" type="redirectAction">/admin/editAttrs</result>
+        </action>
+        
+        
+        <!-- 添加一个属性近义词 -->
+        <action name="addAttrSynonym" class="adminAction" method="addAttrSynonym">
+            <result name="success" type="redirectAction">
+                <param name="actionName">/admin/editAttrSynonyms</param>  
+                <param name="attr.attrId">${attrId}</param>  
+            </result>
+        </action>
+        
+        
+        <!-- 添加一个网站 -->
+        <action name="addWebsite" class="adminAction" method="addWebsite">
+            <result name="success" type="redirectAction">../admin/editNewWebsite</result>
+        </action>
+        
+        
+        <!-- 添加多个网站 -->
+        <action name="addWebsites" class="adminAction" method="addWebsites">
+            <result name="success">/admin/editNewWebsiteCovers.jsp</result>
+        </action>
+        <!-- 添加多个新网站的封面 -->
+        <action name="addNewWebsiteCovers" class="adminAction" method="addNewWebsiteCovers">
+            <result name="success" type="redirectAction">../admin/editNewWebsites</result>
+        </action>
+        
+        
+        <!-- 修改属性名 -->
+        <action name="modifyAttrName" class="adminAction" method="modifyAttrName">
+            <result name="success">/admin/ajax/result_attr.jsp</result>
+        </action>
+        
+        
+        <!-- 修改属性介绍 -->
+        <action name="modifyAttrIntro" class="adminAction" method="modifyAttrIntro">
+            <result name="success">/admin/ajax/result_attr.jsp</result>
+        </action>
+        
+        
+        <!-- 修改属性近义词 -->
+        <action name="modifyAttrSynonym" class="adminAction" method="modifyAttrSynonym">
+            <result name="success">/ajax/pojo/attrSynonym.jsp</result>
+        </action>
+        
+        
+        <!-- 修改网站 -->
+        <action name="modifyWebsite" class="adminAction" method="modifyWebsite">
+            <result name="success" type="redirectAction">../admin/newNotice</result>
+        </action>
+        
+        
+        <!-- 修改网站推荐的审核状态 -->
+        <action name="modifyWebsiteRecommendCheckStatus" class="adminAction" method="modifyWebsiteRecommendCheckStatus">
+            <result name="success">/ajax/result.jsp</result>
+            <result name="error">/ajax/result.jsp</result>
+        </action>
+        
+        
+        <!-- 删除属性 -->
+        <action name="deleteAttr" class="adminAction" method="deleteAttr">
+            <result name="success" type="redirectAction">../admin/editAttrs</result>
+        </action>
+        
+        
+        <!-- 删除属性近义词 -->
+        <action name="deleteAttrSynonym" class="adminAction" method="deleteAttrSynonym">
+            <result name="success" type="redirectAction">
+                <param name="actionName">../admin/editAttrSynonyms</param>  
+                <param name="attr.attrId">${attrId}</param>  
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 路径：src/java/ -->
+
+<struts>
+    
+    <!-- 目录Action -->
+    <package name="list" extends="struts-default" namespace="/list">   
+    
+        <!-- 拦截器 -->
+        <interceptors>
+            <!-- 自定义拦截器 -->
+            <interceptor name="userCookieInterceptor" class="com.webstar365.action.interceptor.UserCookieInterceptor" /><!-- 检测用户是否存在Cookie -->
+            <!-- 自定义拦截器栈 -->
+            <interceptor-stack name="commonStack">
+                <interceptor-ref name="userCookieInterceptor" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+        <!-- 默认拦截器 -->
+        <default-interceptor-ref name="commonStack" />
+        
+        
+        <!-- 全局跳转 -->
+        <global-results>
+             <result name="error">/special/error.jsp</result><!-- 错误页 -->
+             <result name="input">/special/error.jsp</result><!-- 错误页 -->
+        </global-results>
+        
+        
+        <!-- 显示全部分类 -->
+        <action name="allCats" class="listAction" method="showAllCats">
+            <result name="success">/list/allCats.jsp</result>
+        </action> 
+        
+        
+        <!-- 显示全部属性 -->
+        <action name="allAttrs" class="listAction" method="showAllAttrs">
+            <result name="success">/list/allAttrs.jsp</result>
+        </action> 
+        
+        
+        <!-- 显示全部文章 -->
+        <action name="allArticles" class="listAction" method="showAllArticles">
+            <result name="success">/list/allArticles.jsp</result>
+        </action> 
+        
+    </package>
+    
+</struts>

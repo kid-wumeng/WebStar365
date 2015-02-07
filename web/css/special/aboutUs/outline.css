@@ -1,0 +1,30 @@
+.wrapper { width: 800px; }
+.wrapper p { width: 800px; }
+.wrapper dl dd { line-height: 24px; }
+
+
+.wrapper p span { font-weight: bold; color: #A2007C; }
+.wrapper dl dt { font-size: 14px; font-weight: bold; }
+.wrapper dl dd { font-size: 14px; color: #4a4a4a; }
+
+
+body {
+    background: url(../../../images/icons/common/background.gif) center repeat;
+}
+.wrapper {
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+.wrapper p { 
+    margin: 0 auto;
+    text-align: center;
+}
+.wrapper dt {
+    margin: 24px 0 8px;
+}
+.wrapper dl dd {
+    margin-left: 30px;
+}

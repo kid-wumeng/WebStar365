@@ -1,0 +1,320 @@
+/* 网站中各元素的宽、高、行高 */
+.wrapper { width: 1000px; }
+.wrapper .main { width: 750px; }
+.wrapper .sidebar { width: 250px; }
+.wrapper .main .websiteCover { width: 350px; height: 230px; }
+.wrapper .main .websiteCover img { width: 330px; height: 210px; }
+.wrapper .main .websiteOutline .starAndScore { height: 18px; }
+.wrapper .main .websiteOutline .starAndScore .websiteStar { height: 18px; }
+.wrapper .main .websiteOutline .starAndScore .websiteScore { height: 18px; line-height: 22px; }
+.wrapper .main .websiteOutline .websiteBriefIntro { line-height: 20px; }
+.wrapper .main .websiteDetail { min-height: 180px; }
+.wrapper .main .websiteDetail .websiteDetailedIntro { line-height: 21px; }
+.wrapper .main .hr2 { width: 730px; }
+.wrapper .main .websiteComments .comment { width: 730px; }
+.wrapper .main .websiteComments .comment .userFace { width: 50px; height: 50px; }
+.wrapper .main .websiteComments .comment .userFace img { width: 50px; height: 50px; }
+.wrapper .main .websiteComments .comment .row1 { width: 670px; height: 18px; line-height: 18px; }
+.wrapper .main .websiteComments .comment .row1 .commentUser { min-width: 200px; height: 18px; line-height: 18px; }
+.wrapper .main .websiteComments .comment .row1 .commentStar { height: 18px; line-height: 18px; }
+.wrapper .main .websiteComments .comment .commentContent p { width: 655px; max-height: 108px; line-height: 18px; }
+.wrapper .main .websiteComments .comment .row2 { width: 670px; }
+.wrapper .main .websiteComments .comment .row2 .commentPublishDateTime { height: 18px; line-height: 18px; }
+.wrapper .sidebar .websiteData dl div { width: 250px; }
+.wrapper .sidebar .websiteData dl div dd { line-height: 16px; }
+.editComment form { width: 472px; height: 240px; }
+.editComment form .row1 { height: 40px; }
+.editComment form .row1 h1 { height: 40px; line-height: 43px; }
+.editComment form .row1 a { width: 40px; height: 40px; }
+.editComment form .row2 { height: 18px; line-height: 18px; }
+.editComment form .row2 .ask { height: 18px; line-height: 23px; }
+.editComment form .row2 .selectStar { width: 122px; height: 18px; }
+.editComment form .row2 .selectStar a { width: 17px; height: 18px; }
+.editComment form .row2 .hint { height: 18px; line-height: 23px; }
+.editComment form .editCommentContent { width: 440px; height: 110px; line-height: 16px; }
+.editComment form .row4 { height: 50px; line-height: 50px; }
+
+/* 网站中各元素的字体 */
+.wrapper .main .websiteOutline h1 a { font-size: 24px; color: #0099ff; }
+.wrapper .main .websiteOutline .starAndScore .websiteStar .lackCommentNum { font-size: 12px; color: #888; }
+.wrapper .main .websiteOutline .starAndScore .websiteScore { font-size: 12px; }
+.wrapper .main .websiteOutline .starAndScore .remark { font-size: 12px; color: #fff; }
+.wrapper .main .websiteOutline .websiteBriefIntro { font-size: 12px; color: #4a4a4a; }
+.wrapper .main .websiteDetail .websiteDetailedIntro { font-size: 12px; color: #4a4a4a; }
+.wrapper .main .websiteComments .comment .row1 .commentUser { font-size: 12px; color: #0099ff; text-align: left; }
+.wrapper .main .websiteComments .comment .row2 .commentPublishDateTime { font-size: 12px; color: #999; }
+.wrapper .main .websiteComments .comment .commentContent p { font-size: 12px; color: #4a4a4a; }
+.wrapper .main .websiteComments .comment .commentContent .commentEcho { font-size: 12px; color: #0099ff; }
+.wrapper .main .websiteComments .comment .commentContent .commentEcho span { font-family:Tahoma, Geneva, sans-serif; font-size: 12px; }
+.wrapper .main .websiteComments .moreComments a { font-size: 12px; color: #0099ff; }
+.wrapper .sidebar .websiteData dl div dt { font-size: 14px; color: #999; }
+.wrapper .sidebar .websiteData dl div dd { font-family:Tahoma, Geneva, sans-serif; font-size: 12px; color: #0099ff; }
+.wrapper .sidebar .websiteData dl div dd a { font-family:Tahoma, Geneva, sans-serif; font-size: 12px; color: #0099ff; }
+.wrapper .sidebar .websiteData dl div dd .attrName { font-size: 12px; }
+.editComment form .row1 h1 { font-size: 14px; color: #fff; }
+.editComment form .row2 .ask { font-size: 12px; color: #777777; }
+.editComment form .row2 .hint { font-size: 12px; color: #0099ff; }
+.editComment form .row3 .label { font-size: 12px; color: #777777; }
+.editComment form .row3 .remainWordNum { font-size: 12px; color: #777777; }
+.editComment form .editCommentContent { font-size: 12px; }
+.editComment form .row4 .publish { font-size: 12px; color: #fff; }
+
+
+body {
+    background: url(../../images/icons/common/background.gif) center repeat;
+}
+.wrapper {
+    margin: 25px auto 100px;
+    padding: 3px 20px 20px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+/* 主体 */
+.wrapper .main {
+    float: left;
+}
+/* 侧栏 */
+.wrapper .sidebar {
+    float: left;
+}
+/* 网站封面 */
+.wrapper .main .websiteCover {
+    float: left;
+    margin: 8px 8px 5px 0;
+}
+/* 网站封面图片 */
+.wrapper .main .websiteCover img {
+    margin: 10px 10px 0 0;
+    padding: 4px;
+    border: 1px solid #e8e8e8;
+}
+/* 网站概述 */
+.wrapper .main .websiteOutline {
+    margin: 18px 20px 10px 10px;
+}
+/* 网站标题 */
+.wrapper .main .websiteOutline h1 {
+    margin-bottom: 6px;
+    text-indent: 21px;
+}
+.wrapper .main .websiteOutline h1 a:hover,
+.wrapper .main .websiteOutline h1 a:focus {
+    color: #8552a1;
+}
+/* 网站星数 */
+.wrapper .main .websiteOutline .starAndScore .websiteStar {
+    float: left;
+    display: block;
+    margin-left: 20px;
+}
+.wrapper .main .websiteOutline .starAndScore .websiteStar img {
+    height: 18px;
+}
+.wrapper .main .websiteOutline .starAndScore .websiteStar .lackCommentNum {
+    display: block;
+    margin: 4px 0 0 3px;
+}
+.wrapper .main .websiteOutline .starAndScore .websiteScore {
+    float: left;
+    margin-left: 3px;
+}
+.wrapper .main .websiteOutline .starAndScore .remark {
+    display: block;
+    float: left;
+    margin: -2px 0 0 10px;
+    padding: 6px 9px 5px 10px;
+    background-color: #99ccff;
+    border-radius: 2px;
+}
+.wrapper .main .websiteOutline .starAndScore .remark:hover,
+.wrapper .main .websiteOutline .starAndScore .remark:focus {
+    background-color: #6699ff;
+}
+.wrapper .main .websiteOutline .starAndScore .remark:active {
+    background-color: #99ccff;
+}
+/* 网站简介 */
+.wrapper .main .websiteOutline .websiteBriefIntro {
+    margin: 9px 10px 0 0;
+    text-indent: 23px;
+}
+/* 网站概述的水平线 */
+.wrapper .main .websiteOutline hr {
+    margin: 15px 0 5px 0;
+    border: none;
+    border-top: 1px solid #e8e8e8;
+}
+/* 网站详细介绍 */
+.wrapper .main .websiteDetail .websiteDetailedIntro {
+    margin: 0 10px 0 0;
+    letter-spacing: 0px;
+}
+.wrapper .main .hr2 {
+    margin: 13px 0 10px 0;
+    border: none;
+    border-top: 1px solid #e8e8e8;
+}
+.wrapper .main .websiteComments {
+    padding-right: 20px;
+    text-align: right;
+}
+.wrapper .main .websiteComments .comment {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #C8C8C8;
+    overflow: hidden;
+}
+.wrapper .main .websiteComments .comment .userFace {
+    float: left;
+    margin: 3px 0 0 5px;
+}
+.wrapper .main .websiteComments .comment .row1 {
+    float: right;
+    margin-right: 5px;
+}
+.wrapper .main .websiteComments .comment .row1 .commentUser {
+    display: block;
+    float: left;
+    margin-left: 15px;
+}
+.wrapper .main .websiteComments .comment .row1 .commentUser:hover,
+.wrapper .main .websiteComments .comment .row1 .commentUser:focus {
+    color: #8552a1;
+}
+.wrapper .main .websiteComments .comment .row1 .commentStar {
+    display: block;
+    float: right;
+}
+.wrapper .main .websiteComments .comment .commentContent {
+    float: right;
+    margin: 3px 5px 3px 0 ;
+    text-align: left;
+}
+.wrapper .main .websiteComments .comment .commentContent p {
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.wrapper .main .websiteComments .comment .commentContent .commentEcho:hover,
+.wrapper .main .websiteComments .comment .commentContent .commentEcho:focus {
+    color: #8552a1;
+}
+.wrapper .main .websiteComments .comment .row2 {
+    float: right;
+    margin: 1px 5px 0 0;
+}
+.wrapper .main .websiteComments .comment .row2 .commentPublishDateTime{
+    display: block;
+    float: left; 
+    margin-left: 15px;
+}
+.wrapper .sidebar .websiteData dl {
+    margin-top: 20px;
+}
+.wrapper .sidebar .websiteData dl div {
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #e8e8e8;
+    overflow: hidden;
+}
+.wrapper .sidebar .websiteData dl div dt {
+    float: left; 
+}
+.wrapper .sidebar .websiteData dl div dd {
+    display: block;
+}
+.wrapper .sidebar .websiteData dl div dd a:hover,
+.wrapper .sidebar .websiteData dl div dd a:focus {
+    color: #8552a1;
+}
+
+
+.editComment {
+    display: none;
+    position: fixed; left: 0; top: 0;
+    background: url(../../images/icons/common/shadow.png) repeat;
+}
+
+.editComment form {
+    margin: 280px auto;
+    background-color: #fff;
+}
+.editComment form .row1 {
+    background: #000;
+}
+.editComment form .row1 {
+    background-color: #99ccff;
+}
+.editComment form .row1 h1 {
+    float: left;
+    margin-left: 15px;
+}
+.editComment form .row1 a {
+    display: block;
+    float: right;
+    background: url(../../images/icons/common/editComment_close.png) center no-repeat;
+}
+.editComment form .row2 {
+    margin: 5px 0 0 10px;
+    overflow: hidden;
+}
+.editComment form .row2 .ask {
+    display: block;
+    float: left;
+}
+.editComment form .row2 .selectStar {
+    display: block;
+    float: left;
+    margin: 0 5px 0 5px;
+    background: url(../../images/icons/star/star0.png) no-repeat; 
+}
+.editComment form .row2 .selectStar a {
+    display: block; 
+    float: left;
+}
+.editComment form .row2 .selectStar a.first {
+    margin-left: 2px;
+}
+.editComment form .row2 .hint {
+    display: block;
+    float: left;
+}
+.editComment form .row3 {
+    margin: 12px 12px 2px 12px;
+}
+.editComment form .row3 .remainWordNum {
+    float: right;
+}
+.editComment form .editCommentContent {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #bbbbbb;
+}
+.editComment form .row4 {
+    margin: 10px 0 0 0;
+    background-color: #ccccff;
+    overflow: hidden;
+}
+.editComment form .row4 .publish {
+    margin-left: 396px;
+    padding: 8px 8px 6px 10px;
+    background-color: #9b95c9;
+    border-radius: 2px;
+}
+.editComment form .row4 .publish:hover,
+.editComment form .row4 .publish:focus {
+    background-color: #6f60aa;
+}
+.editComment form .row4 .publish:active {
+    background-color: #9b95c9;
+}
+
+/* 各星数对应分数的颜色 */
+.wrapper .main .websiteOutline .starAndScore .star1 { color: #ff3333; }
+.wrapper .main .websiteOutline .starAndScore .star2 { color: #ff9900; }
+.wrapper .main .websiteOutline .starAndScore .star3 { color: #F5CF3B; }
+.wrapper .main .websiteOutline .starAndScore .star4 { color: #7CBF49; }
+.wrapper .main .websiteOutline .starAndScore .star5 { color: #71C7D5; }
+.wrapper .main .websiteOutline .starAndScore .star6 { color: #0066ff; }
+.wrapper .main .websiteOutline .starAndScore .star7 { color: #9900cc; }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 管理员 -->
+    <typeAlias alias="Area" type="com.webstar365.pojo.Area" />
+    
+    <!-- 配置对象关系映射 -->
+    <resultMap id="AreaMap" class="Area">
+        <result property="areaId" column="areaId" />        
+        <result property="areaName" column="areaName" />        
+        <result property="parentArea.areaId" column="parentAreaId" />        
+        <result property="parentArea.areaName" column="parentAreaName" />        
+    </resultMap>
+    
+    <!-- 配置SQL语句 -->
+    <!-- 查询地区（按地区编号） -->
+    <procedure id="findAreaByAreaId" parameterClass="int" resultMap="AreaMap">
+        CALL proc_findAreaByAreaId(#areaId#);
+    </procedure>
+    <!-- 查询地区（按地区级别、上级地区编号） -->
+    <procedure id="findAreaByAreaLvAndParentAreaId" parameterClass="Area" resultClass="Area">
+        CALL proc_findAreaByAreaLvAndParentAreaId(#areaLv#, #parentAreaId#);
+    </procedure>
+
+</sqlMap>

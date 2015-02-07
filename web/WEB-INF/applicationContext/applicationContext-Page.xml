@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 路径：web/WEB-INF/ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <bean id="page" class="com.webstar365.pojo.Page">
+        <property name="pageNo" value="1" /><!-- 页码默认为第1页 -->
+        <property name="websitePageSize" value="20" />
+        <property name="websiteRecommendPageSize" value="30" />
+        <property name="commentPageSize" value="10" />
+        <property name="echoPageSize" value="20" />
+        <property name="articlePageSize" value="30" />
+    </bean>    
+
+</beans>

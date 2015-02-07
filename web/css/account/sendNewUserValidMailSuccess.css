@@ -1,0 +1,28 @@
+.wrapper { width: 500px; }
+.wrapper fieldset p { line-height: 20px; }
+
+
+.wrapper fieldset legend { font-weight: bold; color: #5D0C7B; }
+.wrapper fieldset p { font-size: 14px; color: #8C63A4; }
+
+
+body {
+    background: url(../../images/icons/common/background.gif) center repeat;
+}
+
+.wrapper {
+    margin: 150px auto;
+}
+.wrapper fieldset {
+    padding: 25px 10px 30px 10px;
+    text-align: center;
+    background-color: #eddef5;
+    border: 1px solid #AA87B8;
+    overflow: hidden;
+}
+.wrapper fieldset legend {
+    margin-left: 20px;
+    padding: 10px 15px;
+    background-color: #e2c9ee;
+    border: 1px solid #79378B;
+}

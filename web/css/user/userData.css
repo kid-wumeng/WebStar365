@@ -1,0 +1,95 @@
+.wrapper { width: 650px; min-height: 200px; }
+.wrapper .userFace { width: 190px; }
+.wrapper .userFace img { width: 180px; height: 180px; }
+.wrapper .userFace div { width: 180px; }
+.wrapper .userFace div a { width: 90px; }
+.wrapper .userFace div a span { width: 90px; }
+.wrapper .userData { width: 390px; }
+.wrapper .userHistory { width: 600px; }
+.wrapper .userHistory h1 { color: #4a4a4a; }
+.wrapper .userHistory p { font-size: 12px; color: #777; }
+
+.wrapper .userFace div a { color: #888; }
+.wrapper .userFace div a span.num { font-family: Tahoma, Geneva, sans-serif; font-size: 20px; color: inherit; }
+.wrapper .userFace div a span.label { font-size: 12px; color: inherit; }
+.wrapper .userData span { font-size: 12px; }
+.wrapper .userData span.userNickName { font-size: 20px; font-weight: bold; color: #b76f40; }
+.wrapper .userData span.man { color: #33a3dc; }
+.wrapper .userData span.woman { color: #f173ac; }
+.wrapper .userData span.userBirthday { color: #b76f40; }
+.wrapper .userData span.userArea { color: #b76f40; }
+.wrapper .userData p.userPersonalIntro{ font-size: 12px; color: #777; }
+
+
+body {
+    background: url(../../images/icons/common/background.gif) center repeat;
+}
+
+.wrapper {
+    margin: 150px auto 30px;
+    background-color: #fff;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0 0 10px #c8c8c8;
+    position: relative;
+}
+.wrapper .userFace {
+    position: absolute; left: 45px; top: -100px;
+    box-shadow: 0 0 5px #c8c8c8;
+    overflow: hidden;
+}
+.wrapper .userFace img {
+    border: 5px solid #fff;
+    border-bottom: none;
+}
+.wrapper .userFace div {
+    margin: 2px 0 5px 5px;
+    overflow: hidden;
+}
+.wrapper .userFace div a {
+    display: block;
+    padding: 3px 0;
+    float: left;
+}
+.wrapper .userFace div a.userFriendNum:hover,
+.wrapper .userFace div a.userFriendNum:focus {
+    background-color: #33a3dc;
+    color: #fff;
+}
+.wrapper .userFace div a.userCommentNum:hover,
+.wrapper .userFace div a.userCommentNum:focus {
+    background-color: #ff9900;
+    color: #fff;
+}
+.wrapper .userFace div a span {
+    display: block;
+    text-align: center;
+}
+.wrapper .userData {
+    position: absolute; right: 0px; top: 10px;
+}
+.wrapper .userData span.userNickName {
+    display: block;
+    margin: 0 0 5px -2px;
+}
+.wrapper .userData span.userSex,
+.wrapper .userData span.userBirthday,
+.wrapper .userData span.userArea {
+    padding-right: 8px;
+    border-right: 1px solid #ddd;
+}
+.wrapper .userData p.userPersonalIntro {
+    margin: 5px 10px 15px 0;
+}
+.wrapper .userHistory {
+    margin-top: 160px;
+    margin-left: 25px;
+}
+
+.wrapper .userHistory h1 {
+    margin-bottom: 5px;
+    padding: 0 5px 5px 5px;
+    border-bottom: 1px solid #c8c8c8;
+}
+.wrapper .userHistory p {
+    padding: 0 5px 5px 5px;
+}

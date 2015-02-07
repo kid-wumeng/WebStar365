@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 路径：web/WEB-INF/ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <!-- 分类DAO -->
+    <bean id="catDAO" class="com.webstar365.dao.impl.CatMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 属性DAO -->
+    <bean id="attrDAO" class="com.webstar365.dao.impl.AttrMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 属性近义词DAO -->
+    <bean id="attrSynonymDAO" class="com.webstar365.dao.impl.AttrSynonymMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 网站DAO -->
+    <bean id="websiteDAO" class="com.webstar365.dao.impl.WebsiteMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 评论DAO -->
+    <bean id="commentDAO" class="com.webstar365.dao.impl.CommentMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 回应DAO -->
+    <bean id="echoDAO" class="com.webstar365.dao.impl.EchoMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 文章DAO -->
+    <bean id="articleDAO" class="com.webstar365.dao.impl.ArticleMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 用户DAO -->
+    <bean id="userDAO" class="com.webstar365.dao.impl.UserMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 用户行为DAO -->
+    <bean id="userActDAO" class="com.webstar365.dao.impl.UserActMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 地区DAO -->
+    <bean id="areaDAO" class="com.webstar365.dao.impl.AreaMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 管理员DAO -->
+    <bean id="adminDAO" class="com.webstar365.dao.impl.AdminMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+    <!-- 公告DAO -->
+    <bean id="noticeDAO" class="com.webstar365.dao.impl.NoticeMyBatisDAOImpl">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+
+</beans>

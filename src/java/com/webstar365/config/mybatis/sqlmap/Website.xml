@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 网站 -->
+    <typeAlias alias="Website" type="com.webstar365.pojo.Website" />
+    <typeAlias alias="UserAct" type="com.webstar365.pojo.UserAct" />
+    <typeAlias alias="SearchCondition" type="com.webstar365.pojo.SearchCondition" />
+    
+    <!-- 配置对象关系映射 -->
+    <resultMap id="WebsiteMap" class="Website">
+        <result property="websiteId" column="websiteId" />        
+        <result property="websiteName" column="websiteName" />        
+        <result property="websiteDomain" column="websiteDomain" />        
+        <result property="websiteBriefIntro" column="websiteBriefIntro" />        
+        <result property="websiteDetailedIntro" column="websiteDetailedIntro" />     
+        <result property="websiteOwner" column="websiteOwner" />     
+        <result property="websiteEstablishYear" column="websiteEstablishYear" />     
+        <result property="websiteEstablishMonth" column="websiteEstablishMonth" />     
+        <result property="websiteEstablishDay" column="websiteEstablishDay" />     
+        <result property="websiteCat" column="catId" select="findCatByCatId" />
+        <result property="websiteAttrs" column="websiteId" select="findAttrsByWebsiteId" />
+        <result property="websiteStar" column="websiteStar" />        
+    </resultMap>
+    <resultMap id="SearchWebsiteMap" class="Website">
+        <result property="websiteId" column="websiteId" />        
+        <result property="websiteName" column="websiteName" />        
+        <result property="websiteDomain" column="websiteDomain" />        
+        <result property="websiteBriefIntro" column="websiteBriefIntro" />        
+        <result property="websiteDetailedIntro" column="websiteDetailedIntro" />     
+        <result property="websiteOwner" column="websiteOwner" />     
+        <result property="websiteEstablishYear" column="websiteEstablishYear" />     
+        <result property="websiteEstablishMonth" column="websiteEstablishMonth" />     
+        <result property="websiteEstablishDay" column="websiteEstablishDay" />     
+        <result property="websiteCat" column="catId" select="findCatByCatId" />
+        <result property="websiteAttrs" column="websiteId" select="findAttrsByWebsiteId" />
+        <result property="websiteStar" column="websiteStar" />     
+        <result property="websiteImport" column="websiteImport" />     
+    </resultMap>
+    
+    <!-- 配置SQL语句 -->
+    <!-- 查询单个网站（按网站编号） -->
+    <procedure id="findWebsiteByWebsiteId" parameterClass="long" resultMap="WebsiteMap">
+        CALL proc_findWebsiteByWebsiteId(#websiteId#);
+    </procedure>
+    <!-- 查询单个网站（按网站域名） -->
+    <procedure id="findWebsiteByWebsiteDomain" parameterClass="string" resultClass="Website">
+        CALL proc_findWebsiteByWebsiteDomain(#websiteDomain#);
+    </procedure>
+    <!-- 查询全部网站 -->
+    <procedure id="findAllWebsites" parameterClass="SearchCondition" resultMap="WebsiteMap">
+        CALL proc_findAllWebsites(
+                             #page.pageNo#,
+                             #page.pageSize#
+        );
+    </procedure>
+    <!-- 查询网站的集合（按分类编号） -->
+    <procedure id="findWebsitesByCatId" parameterClass="SearchCondition" resultMap="WebsiteMap">
+        CALL proc_findWebsitesByCatId(
+                                    #catId#,
+                                    #page.pageNo#,
+                                    #page.pageSize#
+        );
+    </procedure>
+    <!-- 查询网站的集合（按属性编号） -->
+    <procedure id="findWebsitesByAttrId" parameterClass="SearchCondition" resultMap="WebsiteMap">
+        CALL proc_findWebsitesByAttrId(
+                                    #attrId#,
+                                    #page.pageNo#,
+                                    #page.pageSize#
+        );
+    </procedure>
+    <!-- 查询网站的集合（按关键词） -->
+    <procedure id="findWebsitesByKeywords" parameterClass="SearchCondition" resultMap="SearchWebsiteMap">
+        CALL proc_findWebsitesByKeywords(
+                                    #keywords#,
+                                    #page.pageNo#,
+                                    #page.pageSize#
+        );
+    </procedure>
+    <!-- 查询网站的集合（按多种搜索条件的组合） -->
+    <procedure id="findWebsitesBySearchCondition" parameterClass="SearchCondition" resultMap="WebsiteMap">
+        CALL proc_findWebsitesBySearchCondition(
+                                            #websiteNameKeyword#,
+                                            #websiteDomainKeyword#,
+                                            #websiteIdStart#,
+                                            #websiteIdEnd#,
+                                            #catId#,
+                                            #attrIds#,
+                                            #adminId#,
+                                            #addWebsiteDateStart#,
+                                            #addWebsiteDateEnd#
+        );
+    </procedure>
+    <!-- 添加一个网站 -->
+    <procedure id="addWebsite" parameterClass="Website" resultClass="long">
+        CALL proc_addWebsite(
+                        #websiteDomain#,
+                        #websiteName#,
+                        #websiteBriefIntro#,
+                        #websiteDetailedIntro#,
+                        #websiteOwner#,
+                        #websiteEstablishYear#,
+                        #websiteEstablishMonth#,
+                        #websiteEstablishDay#,
+                        #websiteCat.catId#
+        );
+    </procedure>
+    <!-- 添加网站的属性（按网站编号和属性编号） -->
+    <procedure id="addWebsiteAttrsByWebsiteIdAndAttrId" parameterClass="Website">
+        CALL proc_addWebsiteAttrsByWebsiteIdAndAttrId(
+            #websiteId#,
+            #websiteAttr.attrId#
+        );
+    </procedure>
+    <!-- 删除网站的属性（按网站编号） -->
+    <procedure id="deleteWebsiteAttrsByWebsiteId" parameterClass="long">
+        CALL proc_deleteWebsiteAttrsByWebsiteId(
+            #websiteId#
+        );
+    </procedure>
+    <!-- 修改一个网站（按网站编号） -->
+    <procedure id="modifyWebsiteByWebsiteId" parameterClass="Website">
+        CALL proc_modifyWebsiteByWebsiteId(
+                        #websiteId#,
+                        #websiteName#,
+                        #websiteDomain#,
+                        #websiteBriefIntro#,
+                        #websiteDetailedIntro#,
+                        #websiteOwner#,
+                        #websiteEstablishYear#,
+                        #websiteEstablishMonth#,
+                        #websiteEstablishDay#,
+                        #websiteCat.catId#
+        );
+    </procedure>
+    <!-- 统计全部网站数量 -->
+    <procedure id="countWebsiteNum" resultClass="long">
+        CALL proc_countWebsiteNum();
+    </procedure>
+    <!-- 统计网站数量（按分类编号） -->
+    <procedure id="countWebsiteNumByCatId" parameterClass="int" resultClass="long">
+        CALL proc_countWebsiteNumByCatId(#catId#);
+    </procedure>
+    <!-- 统计网站数量（按属性编号） -->
+    <procedure id="countWebsiteNumByAttrId" parameterClass="long" resultClass="long">
+        CALL proc_countWebsiteNumByAttrId(#attrId#);
+    </procedure>
+    <!-- 统计网站数量（按关键词） -->
+    <procedure id="countWebsiteNumByKeywords" parameterClass="SearchCondition" resultClass="long">
+        CALL proc_countWebsiteNumByKeywords(#keywords#);
+    </procedure>
+</sqlMap>

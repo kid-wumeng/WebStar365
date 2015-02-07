@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 网站属性 -->
+    <typeAlias alias="Article" type="com.webstar365.pojo.Article" />
+    <typeAlias alias="SearchCondition" type="com.webstar365.pojo.SearchCondition" />
+    
+    <!-- 配置对象关系映射 -->
+
+    <!-- 配置SQL语句 -->
+    <!-- 查询全部文章 -->
+    <procedure id="findAllArticles" parameterClass="searchCondition" resultClass="Article">
+        CALL proc_findAllArticles(
+                            #page.pageNo#,
+                            #page.pageSize#
+        );
+    </procedure>
+    <!-- 查询新文章（有题图模式） -->
+    <procedure id="findNewArticleWithCover" resultClass="Article">
+        CALL proc_findNewArticleWithCover();
+    </procedure>
+    <!-- 查询新文章（无题图模式） -->
+    <procedure id="findNewArticlesWithoutCover" resultClass="Article">
+        CALL proc_findNewArticlesWithoutCover();
+    </procedure>
+    <!-- 统计文章数量 -->
+    <procedure id="countArticleNum" resultClass="long">
+        CALL proc_countArticleNum();
+    </procedure>
+
+</sqlMap>

@@ -1,0 +1,37 @@
+.wrapper { width: 1000px; }
+.wrapper .main { width: 850px; }
+.wrapper .main form div.websiteDomain input { width: 200px; }
+
+
+.wrapper .main form div input { font-size: 12px; }
+
+
+.wrapper {
+    margin: 20px auto 60px;
+    overflow: hidden;
+}
+.wrapper .main {
+    float: left;
+} 
+.wrapper .main form {
+    margin: 20px 16px 8px 275px;
+    overflow: hidden;
+}
+.wrapper .main form div.websiteDomain {
+    float: left;
+    margin: 10px 0 5px 0;
+}
+.wrapper .main form div input {
+    padding: 2px 3px;
+    background-color: #ffffcd; 
+    border: 1px groove #c8c8c8;
+}
+.wrapper .main form .check {
+    display: block;
+    float: left;
+    margin: 4px 0 0 15px;
+    padding: 4px 6px;
+}
+.wrapper .main .result {
+    margin: 0 0 0 277px;
+}

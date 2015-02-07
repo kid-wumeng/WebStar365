@@ -1,0 +1,92 @@
+/* 每个网站中各元素的宽、高、行高 */
+.wrapper .main .website { width: 245px; height: 245px; }
+.wrapper .main .website .websiteCover { width: 245px; height: 156px;  }
+.wrapper .main .website .websiteCover img { width: 220px; height: 140px; }
+.wrapper .main .website .row1 { width: 224px; height: 24px; line-height: 24px; }
+.wrapper .main .website .row2 { width: 224px; height: 22px; line-height: 22px; }
+.wrapper .main .website .row2 .websiteStar .lackCommentNum { height: 22px; line-height: 22px; }
+.wrapper .main .website .row2 .websiteScore { height: 22px; line-height: 20px; }
+.wrapper .main .website .row2 .websiteDetails { height: 22px; line-height: 20px; }
+.wrapper .main .website .row3 { width: 224px; height: 24px; line-height: 24px; }
+
+
+/* 每个网站中各元素的字体 */
+.wrapper .main .website .row1 .websiteName { font-size: 12px; color: #843900; }
+.wrapper .main .website .row1 .websiteDomain { font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: #843900; }
+.wrapper .main .website .row2 .websiteStar .lackCommentNum { font-size: 12px; color: #888; }
+.wrapper .main .website .row2 .websiteScore { font-size: 12px; }
+.wrapper .main .website .row2 .websiteDetails { font-size: 12px; color: #AF4A92; }
+.wrapper .main .website .row3 .websiteAttrs a { font-size: 12px; color: #777; }
+
+
+.wrapper .main {
+    padding-bottom: 1px;
+    background-color: #ddd;
+    overflow: hidden;
+}
+/* 每个网站 */
+.wrapper .main .website {
+    margin: 1px 1px 0 0;
+    background: url(../../images/icons/common/bg_grid_website.jpg) left bottom repeat-x #F2F2F2;
+    float: left;
+}
+.wrapper .main .col4 {
+    margin-right: 0;
+}
+/* 网站封面Div */
+.wrapper .main .website .websiteCover {
+    display: table-cell;
+    text-align: center;
+    vertical-align: bottom; 
+}
+/* 网站封面图片 */
+.wrapper .main .website .websiteCover img{
+}
+/* 第一行 */
+.wrapper .main .website .row1 {
+    margin-top: 4px;
+    padding: 0 12px;
+    overflow: hidden;
+}
+.wrapper .main .website .row1 .websiteName {
+    margin-right: -3px;
+}
+/* 第二行 */
+.wrapper .main .website .row2 {
+    padding: 0 9px;
+    overflow: hidden;
+}
+/* 第三行 */
+.wrapper .main .website .row3 {
+    margin-top: 5px;
+    padding: 0 11px;
+    overflow: hidden;
+}
+.wrapper .main .website .row2 .websiteStar  {
+    display: block;
+    float: left;
+}
+.wrapper .main .website .row2 .websiteStar .lackCommentNum {
+    margin-left: 4px;
+}
+.wrapper .main .website .row2 .websiteScore {
+    display: block;
+    float: left;
+    margin-left: 3px;
+}
+.wrapper .main .website .row2 .websiteDetails {
+    display: block;
+    float: right;
+}
+.wrapper .main .website .row2 .websiteDetails:hover,
+.wrapper .main .website .row2 .websiteDetails:focus {
+    text-shadow: 1px 1px 1px #C57CAC;
+}
+.wrapper .main .website .row2 .websiteDetails:active {
+    text-shadow: none;
+}
+.wrapper .main .website .row3 .websiteAttrs a {
+    padding: 5px 5px 3px 5px;
+    border: 1px solid #7D9EC0;
+    color: #7D9EC0; 
+}

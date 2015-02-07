@@ -1,0 +1,69 @@
+.wrapper { width: 650px; }
+.wrapper fieldset form div.userPass label,
+.wrapper fieldset form div.userPass2 label { width: 100px; height: 30px; line-height: 28px; }
+.wrapper fieldset form div.userPass input,
+.wrapper fieldset form div.userPass2 input { width: 250px; height: 26px; }
+.wrapper fieldset form div.userPass span,
+.wrapper fieldset form div.userPass2 span { height: 30px; line-height: 28px; }
+
+.wrapper fieldset legend { font-weight: bold; color: #5D0C7B; }
+.wrapper fieldset form div.userPass label,
+.wrapper fieldset form div.userPass2 label { text-align: right; color: #52096C; }
+.wrapper fieldset form div.userPass input,
+.wrapper fieldset form div.userPass2 input { font-size: 12px; color: #4a4a4a; }
+.wrapper fieldset form div.userPass span,
+.wrapper fieldset form div.userPass2 span { font-size: 12px; color: #8C63A4; }
+.wrapper fieldset form .sure { font-size: 12px; color: #fff; }
+
+.wrapper {
+    margin: 50px auto;
+}
+.wrapper fieldset {
+    padding: 35px 10px 30px;
+    background-color: #eddef5;
+    border: 1px solid #AA87B8;
+}
+.wrapper fieldset legend {
+    margin-left: 30px;
+    padding: 10px;
+    background-color: #e2c9ee;
+    border: 1px solid #79378B;
+}
+.wrapper fieldset form{
+    margin-left: 15px;
+}
+
+.wrapper fieldset form div.userPass,
+.wrapper fieldset form div.userPass2 {
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.wrapper fieldset form div.userPass label,
+.wrapper fieldset form div.userPass2 label {
+    float: left;
+    margin-right: 10px;
+}
+.wrapper fieldset form div.userPass input,
+.wrapper fieldset form div.userPass2 input {
+    float: left;
+    margin-right: 10px;
+    padding: 1px 0 0 4px;
+}
+
+.wrapper fieldset form .sure { 
+    display: block;
+    float: left;
+    margin: 20px 0 0 480px;
+    padding: 8px 15px 7px;
+    background-color: #c77eb5;
+    border-radius: 2px;
+}
+.wrapper fieldset form .sure:hover,
+.wrapper fieldset form .sure:focus {
+    background-color: #f173ac;
+    box-shadow: 0px 0px 5px #f173ac;
+}
+.wrapper fieldset form .sure:active {
+    background-color: #c77eb5;
+}
+

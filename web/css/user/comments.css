@@ -1,0 +1,137 @@
+.wrapper { width: 800px; }
+.wrapper .comments .comment { width: 800px; }
+.wrapper .comments .comment .websiteCover { width: 226px; height: 140px;  }
+.wrapper .comments .comment .websiteCover img { width: 220px; height: 140px; }
+.wrapper .comments .comment .row1 { width: 559px; height: 18px; line-height: 18px; }
+.wrapper .comments .comment .row1 .websiteName { height: 18px; line-height: 18px; }
+.wrapper .comments .comment .row1 .websiteDomain { height: 18px; line-height: 16px; }
+.wrapper .comments .comment .row1 .commentStar { height: 18px; line-height: 18px; }
+.wrapper .comments .comment .commentContent p { width: 559px; max-height: 108px; line-height: 18px; }
+.wrapper .comments .comment .row2 { width: 559px; }
+.wrapper .comments .comment .row2 .commentPublishDateTime { height: 18px; line-height: 18px; }
+.wrapper .comments .comment .row2 span a { height: 18px; line-height: 18px; }
+.wrapper .page .targetPageNo input { width: 24px; height: 24px; }
+
+
+.wrapper h1 { font-size: 20px; font-weight: bold; color: #4a4a4a; }
+.wrapper h1 a { font-size: 20px; font-weight: bold; color: #0099cc; }
+.wrapper .comments .comment .row1 .websiteName { font-size: 12px; color: #0099ff; }
+.wrapper .comments .comment .row1 .websiteName:hover,
+.wrapper .comments .comment .row1 .websiteName:focus { color: #8552a1; }
+.wrapper .comments .comment .row1 .websiteDomain{ font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: #0099ff; }
+.wrapper .comments .comment .row1 .websiteDomain:hover,
+.wrapper .comments .comment .row1 .websiteDomain:focus { color: #8552a1; }
+.wrapper .comments .comment .row2 .commentPublishDateTime { font-size: 12px; color: #999; }
+.wrapper .comments .comment .row2 span a { font-size: 12px; color: #999; }
+.wrapper .comments .comment .commentContent p { font-size: 12px; color: #4a4a4a; }
+.wrapper .comments .comment .commentContent .commentEcho { font-size: 12px; color: #0099ff; }
+.wrapper .comments .comment .commentContent .commentEcho:hover,
+.wrapper .comments .comment .commentContent .commentEcho:focus { color: #8552a1; }
+.wrapper .comments .comment .commentContent .commentEcho span { font-family:Tahoma, Geneva, sans-serif; font-size: 12px; }
+.wrapper .page .pageButton { color: #666; }
+.wrapper .page .pageButton:hover,
+.wrapper .page .pageButton:focus { color: #fff; }
+.wrapper .page .pageButton:active { color: #666; }
+.wrapper .page .targetPageNo input { text-align: center; }
+
+
+body {
+    background: url(../../images/icons/common/background.gif) center repeat;
+}
+
+.wrapper {
+    margin: 25px auto 100px;
+    padding: 7px 25px 20px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+
+.wrapper h1 {
+    margin: 15px 0 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.wrapper .comments {
+    padding-right: 20px;
+    text-align: right;
+}
+.wrapper .comments .comment {
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #C8C8C8;
+    overflow: hidden;
+}
+.wrapper .comments .comment .websiteCover { 
+    float: left; 
+    margin-top: 3px;
+    text-align: center;
+    vertical-align: bottom; 
+}
+.wrapper .comments .comment .websiteCover img { 
+    padding: 2px;
+    border: 1px solid #e8e8e8;
+}
+.wrapper .comments .comment .row1 {
+    float: right;
+}
+.wrapper .comments .comment .row1 .websiteName {
+    display: block;
+    float: left;
+}
+.wrapper .comments .comment .row1 .websiteDomain {
+    display: block;
+    float: left;
+    margin-left: 5px;
+}
+.wrapper .comments .comment .row1 .commentStar {
+    display: block;
+    float: right;
+    margin-right: 7px;
+}
+.wrapper .comments .comment .commentContent {
+    float: right;
+    margin: 3px 0;
+    text-align: left;
+}
+.wrapper .comments .comment .commentContent p {
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.wrapper .comments .comment .row2 {
+    float: right;
+}
+.wrapper .comments .comment .row2 .commentPublishDateTime{
+    display: block;
+    float: left; 
+}
+.wrapper .page {
+    padding: 12px 15px;
+    text-align: right;
+    background-color: #F2F2F2;
+    clear: left; 
+}
+.wrapper .page .pageButton {
+    margin-right: 3px;
+    padding: 6px 8px;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+.wrapper .page .pageButton:hover,
+.wrapper .page .pageButton:focus {
+    background-color: #74787c;
+    border: 1px solid #74787c;
+}
+.wrapper .page .pageButton:active {
+    background: none;
+    border: 1px solid #666;
+}
+.wrapper .page .pageNoAndNum {
+    margin: 0 15px 0 10px;
+}
+
+.searchComments {
+    display: none;
+}

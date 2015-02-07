@@ -1,0 +1,28 @@
+.wrapper { width: 1000px; }
+.wrapper .main { width: 750px; }
+.wrapper .main p { line-height: 22px; }
+
+.wrapper .main h2 { font-size: 24px; }
+.wrapper .main span { font-size: 12px; }
+.wrapper .main p { font-size: 14px; }
+
+.wrapper {
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.wrapper .main {
+    float: left;
+    padding: 23px 50px;
+    text-align: center;
+}
+.wrapper .main h2 {
+    margin-bottom: 10px;
+}
+.wrapper .main span {
+    display: block;
+    margin-bottom: 10px;
+}
+.wrapper .main p {
+    text-align: left;
+}

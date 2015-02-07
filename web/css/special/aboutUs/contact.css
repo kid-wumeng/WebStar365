@@ -1,0 +1,24 @@
+.wrapper { width: 800px; }
+.wrapper dl dd { line-height: 24px; }
+
+
+.wrapper dl dt { font-size: 14px; font-weight: bold; }
+.wrapper dl dd { font-size: 14px; color: #4a4a4a; }
+
+
+body {
+    background: url(../../../images/icons/common/background.gif) center repeat;
+}
+.wrapper {
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+.wrapper dt {
+    margin: 24px 10px 5px;
+}
+.wrapper dl dd {
+    margin-left: 30px;
+}

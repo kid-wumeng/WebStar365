@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 路径：web/WEB-INF/ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <!-- 新用户验证邮件 -->
+    <bean id="newUserValidMail" class="com.webstar365.pojo.Mail">
+        <property name="SMTPHost">
+            <value>smtp.163.com</value>
+        </property>
+        <property name="SMTPHostLoginName">
+            <value>webstar365</value>
+        </property>
+        <property name="SMTPHostLoginPass">
+            <value>65105854</value>
+        </property>
+        <property name="senderName">
+            <value>星象仪</value>
+        </property>
+        <property name="senderAddress">
+            <value>webstar365@163.com</value>
+        </property>
+        <property name="mailSubject">
+            <value>星象仪 - 新用户注册验证</value>
+        </property>
+        <property name="mailContentType">
+            <value>text/html;charset=utf8</value>
+        </property>
+    </bean>
+
+</beans>

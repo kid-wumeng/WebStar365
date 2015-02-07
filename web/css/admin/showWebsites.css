@@ -1,0 +1,87 @@
+.wrapper { width: 1000px; }
+.wrapper .main { width: 850px; }
+.wrapper .main table tr td.websiteId { width: 36px; }
+.wrapper .main table tr td.websiteName a { width: 180px; height: 20px; line-height: 20px; }
+.wrapper .main table tr td.websiteDomain a { width: 200px; height: 20px; line-height: 20px; }
+.wrapper .main table tr td.websiteCat { width: 60px; }
+.wrapper .main table tr td.websiteAttrs { width: 70px; }
+.wrapper .main table tr td.websiteStar { width: 30px; }
+.wrapper .main table tr td.websiteScore { width: 30px; }
+.wrapper .main table tr td.show { width: 30px; }
+.wrapper .main table tr td.edit { width: 30px; }
+.wrapper .main table tr td.delete { width: 30px; }
+
+.wrapper .main table tr td span { font-size: 14px; }
+.wrapper .main table tr td a { font-size: 14px; }
+.wrapper .main table tr td.websiteName a:hover,
+.wrapper .main table tr td.websiteName a:focus { text-shadow: 1px 1px 1px #999; }
+.wrapper .main table tr td.websiteDomain a:hover,
+.wrapper .main table tr td.websiteDomain a:focus { text-shadow: 1px 1px 1px #999; }
+.wrapper .main table tr td.websiteStar span { font-family: Verdana, Geneva, sans-serif; font-size: 12px; }
+.wrapper .main table tr td.websiteScore span { font-family: Verdana, Geneva, sans-serif; font-size: 12px; }
+.wrapper .main table tr td.show a { color: #3399ff; }
+.wrapper .main table tr td.edit a { color: #00cc66; }
+.wrapper .main table tr td.delete a { color: #ff6666; }
+
+
+.wrapper {
+    margin: 20px auto;
+    overflow: hidden;
+}
+.wrapper .main {
+    float: left;
+    overflow: hidden;
+}
+
+.wrapper .main table {
+    margin: 16px 16px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.wrapper .main table tr th {
+    padding: 5px;
+    border: 1px solid #666666;
+}
+.wrapper .main table tr td {
+    padding: 5px;
+    border: 1px solid #c8c8c8;
+}
+.wrapper .main table tr td.websiteCat { 
+    text-align: center;
+}
+.wrapper .main table tr td.websiteAttrs { 
+    text-align: center;
+}
+.wrapper .main table tr td.websiteStar {
+    text-align: center;
+}
+.wrapper .main table tr td.websiteScore {
+    text-align: center;
+}
+.wrapper .main table tr td.show { 
+    text-align: center;
+}
+.wrapper .main table tr td.edit { 
+    text-align: center;
+}
+.wrapper .main table tr td.delete { 
+    text-align: center;
+}
+.wrapper .main table tr td.websiteName a {
+    display: block;
+    word-wrap:break-word;  /* 控制span换行 */
+}
+.wrapper .main table tr td.websiteDomain a {
+    display: block;
+    word-wrap:break-word;  /* 控制span换行 */
+}
+
+/* 各星数对应分数的颜色 */
+.star0 { color: #c8c8c8; }
+.star1 { color: #ff3333; }
+.star2 { color: #ff9900; }
+.star3 { color: #F5CF3B; }
+.star4 { color: #7CBF49; }
+.star5 { color: #71C7D5; }
+.star6 { color: #0066ff; }
+.star7 { color: #9900cc; }

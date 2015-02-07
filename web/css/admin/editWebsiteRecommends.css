@@ -1,0 +1,124 @@
+.wrapper { width: 1000px; }
+.wrapper .main { width: 850px; }
+.wrapper .page .targetPageNo input { width: 24px; height: 24px; }
+.websiteDetails .checkInfo { width: 450px; }
+.websiteDetails .websiteInfo { width: 450px; }
+.websiteDetails .close { width: 450px; }
+.selectCheckStatus form { width: 472px; height: 240px; }
+
+
+
+.wrapper .main table tr td { font-size: 12px; color: #999; }
+.wrapper .main table tr td a { font-size: 12px; color: #000; }
+.wrapper .main table tr td.wait { color: #777; } 
+.wrapper .main table tr td.pass { color: #00cc66; }
+.wrapper .main table tr td.fail { color: #ff3300; }
+.wrapper .page .targetPageNo input { text-align: center; }
+.websiteDetails div span { font-size: 12px; }
+.websiteDetails div p { font-size: 12px; }
+.selectCheckStatus form .selectWait { color: #777; font-size: 12px; }
+.selectCheckStatus form .selectPass { color: #00cc66; font-size: 12px; }
+.selectCheckStatus form .selectFail { color:#ff3300; font-size: 12px; }
+
+.wrapper {
+    margin: 20px auto;
+    overflow: hidden;
+}
+.wrapper .main {
+    float: left;
+    overflow: hidden;
+}
+.wrapper .main .checkStatusNav {
+    margin: 20px 20px 0 20px;
+}
+.wrapper .main .checkStatusNav a {
+    margin-right: 10px;
+    padding: 6px 10px;
+}
+.wrapper .main .checkStatusNav a:hover,
+.wrapper .main .checkStatusNav a:focus {
+    border-bottom: 1px solid #000;
+}
+.wrapper .main .checkStatusNav a.nowShow {
+    background-color: #c8c8c8;
+}
+.wrapper .main table {
+    margin: 16px 16px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.wrapper .main table tr td {
+    padding: 5px;
+    border: 1px solid #c8c8c8;
+}
+.wrapper .main table tr td.userNickName,
+.wrapper .main table tr td.websiteIntro,
+.wrapper .main table tr td.adminName,
+.wrapper .main table tr td.websiteCheckFailReason
+{
+    display: none;
+}
+.wrapper .main table tr td a:hover,
+.wrapper .main table tr td a:focus {
+    border-bottom: 1px solid #000;
+}
+.wrapper .page {
+    margin: 1px 10px;
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #999;
+    clear: left; 
+}
+.wrapper .page .firstPage,
+.wrapper .page .prevPage,
+.wrapper .page .nextPage,
+.wrapper .page .lastPage,
+.wrapper .page .goto {
+    margin-right: 3px;
+    padding: 5px;
+}
+.wrapper .page .pageNoAndNum {
+    margin: 0 15px 0 10px;
+}
+.websiteDetails {
+    display: none;
+    position: fixed; left: 0; top: 0;
+    background: url(../../images/icons/common/shadow.png) repeat;
+}
+.websiteDetails div { 
+    padding: 10px;
+}
+.websiteDetails .checkInfo {
+    margin: 50px auto 0;
+    background-color: #fff;
+}
+.websiteDetails .websiteInfo {
+    margin: 0 auto;
+    background-color: #fff;
+}
+.websiteDetails .checkInfo span,
+.websiteDetails .websiteInfo span {
+    display: block;
+}
+.websiteDetails .websiteInfo span.websiteDomain {
+    margin-bottom: 10px;
+}
+.websiteDetails .close {
+    margin: 0 auto;
+    background-color: #fff;
+}
+.websiteDetails .close button {
+    padding: 5px;
+}
+.page .searchWebsiteRecommends {
+    display: none;
+}
+.selectCheckStatus {
+    display: none;
+    position: fixed; left: 0; top: 0;
+    background: url(../../images/icons/common/shadow.png) repeat;
+}
+.selectCheckStatus form {
+    margin: 50px auto;
+    background-color: #fff;
+}

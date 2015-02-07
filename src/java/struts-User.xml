@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 路径：src/java/ -->
+
+<struts>
+    
+    <!-- 用户Action -->
+    <package name="user" extends="struts-default" namespace="/user">
+        
+        <!-- 拦截器 -->
+        <interceptors>
+            <!-- 自定义拦截器 -->
+            <interceptor name="userCookieInterceptor" class="com.webstar365.action.interceptor.UserCookieInterceptor" />  <!-- 检测用户是否存在Cookie -->
+            <interceptor name="userLoginInterceptor" class="com.webstar365.action.interceptor.UserLoginInterceptor" />    <!-- 检测用户是否登录 --> 
+            <interceptor name="nowUserInterceptor" class="com.webstar365.action.interceptor.NowUserInterceptor" />        <!-- 检测用户传参是否为当前用户 -->
+        </interceptors>
+        
+        
+        <!-- 全局跳转 -->
+        <global-results>
+            <result name="login" type="redirect">/account/userLogin.jsp</result><!-- 登录页 -->
+            <result name="error">/user/error.jsp</result><!-- 错误页 -->
+            <result name="input">/user/error.jsp</result><!-- 错误页 -->
+        </global-results>
+        
+        
+        <!-- 显示用户评论 -->
+        <action name="comments" class="userAction" method="showComments">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/user/comments.jsp</result>
+        </action>
+        
+        
+        <!-- 显示“我的评论” -->
+        <action name="myComments" class="userAction" method="showMyComments">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/user/myComments.jsp</result>
+        </action>
+        
+        
+        <!-- 显示用户资料 -->
+        <action name="userData" class="userAction" method="showUserData">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/user/userData.jsp</result>
+        </action>
+        
+        
+        <!-- 显示“个人资料” -->
+        <action name="myUserData" class="userAction" method="showMyUserData">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/user/myUserData.jsp</result>
+        </action>
+        
+        
+        <!-- 编辑用户资料 -->
+        <action name="account/editUserData" class="userAction" method="editUserData">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/user/account/editUserData.jsp</result>
+        </action>
+        
+        
+        <!-- 修改用户资料 -->
+        <action name="account/modifyUserData" class="userAction" method="modifyUserData">
+            <interceptor-ref name="userCookieInterceptor" />  
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />           
+            <result name="success" type="redirectAction">
+                <param name="actionName">account/editUserData</param>  
+                <param name="user.userId">${userId}</param>  
+            </result>
+        </action>
+        
+        <!-- 修改用户资料 -->
+        <action name="account/modifyUserPass" class="userAction" method="modifyUserPass">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />           
+            <result name="success">/user/account/modifyUserPassResult.jsp</result>
+        </action>
+        
+        <!-- 添加用户头像预览 -->
+        <action name="account/addUserFacePreview" class="userAction" method="addUserFacePreview">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/user/account/editUserData.jsp</result>
+        </action>
+        
+        
+        <!-- 添加评论 -->
+        <action name="addComment" class="userAction" method="addComment">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/ajax/pojo/comment.jsp</result>
+            <result name="error">/ajax/pojo/comment.jsp</result>
+        </action>
+        
+        
+        <!-- 修改评论 -->
+        <action name="modifyComment" class="userAction" method="modifyComment">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/ajax/result.jsp</result>
+            <result name="error">/ajax/result.jsp</result>
+        </action>
+        
+        
+        <!-- 删除评论 -->
+        <action name="deleteComment" class="userAction" method="deleteComment">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/ajax/result.jsp</result>
+            <result name="error">/ajax/result.jsp</result>
+        </action>
+        
+        
+        <!-- 添加回应 -->
+        <action name="addEcho" class="userAction" method="addEcho">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="defaultStack" />
+            <result name="success" type="redirectAction">
+                <param name="actionName">../website/comment</param>  
+                <param name="comment.commentId">${commentId}</param>  
+            </result>
+        </action>
+        
+        
+        <!-- 核对网站推荐域名 -->
+        <action name="checkWebsiteRecommendDomain" class="userAction" method="checkWebsiteRecommendDomain">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/ajax/result.jsp</result>
+            <result name="error">/ajax/result.jsp</result>
+        </action>
+        
+        
+        <!-- 推荐网站 -->
+        <action name="recommendWebsite" class="userAction" method="recommendWebsite">
+            <interceptor-ref name="userCookieInterceptor" />  <!-- 检测用户Cookie -->
+            <interceptor-ref name="userLoginInterceptor" />   <!-- 检测用户登录 --> 
+            <interceptor-ref name="nowUserInterceptor" />     <!-- 检测当前用户 -->
+            <interceptor-ref name="defaultStack" />
+            <result name="success">/ajax/result.jsp</result>
+            <result name="error">/ajax/result.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 路径：src/java/ -->
+
+<struts>
+    
+    <!-- 帐号Action -->
+    <package name="special" extends="struts-default">
+        
+        <!-- 拦截器 -->
+        <interceptors>
+            <!-- 自定义拦截器 -->
+            <interceptor name="userCookieInterceptor" class="com.webstar365.action.interceptor.UserCookieInterceptor" />  <!-- 检测用户是否存在Cookie -->
+            <!-- 自定义拦截器栈 -->
+            <interceptor-stack name="commonStacks">
+                <interceptor-ref name="userCookieInterceptor" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+        <!-- 默认拦截器 -->
+        <default-interceptor-ref name="commonStacks" />
+        
+        
+        <!-- 全局跳转 -->
+        <global-results>
+            <result name="error">/special/error.jsp</result><!-- 错误页 -->
+            <result name="input">/special/error.jsp</result><!-- 错误页 -->
+        </global-results>
+        
+        
+        <!-- 显示主页 -->
+        <action name="home" class="specialAction" method="showHome">
+            <result name="success">/home.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 管理员 -->
+    <typeAlias alias="Admin" type="com.webstar365.pojo.Admin" />
+    
+    <!-- 配置对象关系映射 -->
+    <resultMap id="AdminMap" class="Admin">
+        <result property="adminId" />
+        <result property="adminLv" />
+    </resultMap>
+
+    <!-- 配置SQL语句 -->
+    <!-- 查询全部管理员 -->
+    <procedure id="findAllAdmins" resultClass="Admin">
+        CALL proc_findAllAdmins();
+    </procedure>
+    <!-- 查询管理员（按帐号、密码） -->
+    <procedure id="findAdminByAdminId" parameterClass="int" resultClass="Admin">
+        CALL proc_findAdminByAdminId(#adminId#);
+    </procedure>
+    <!-- 查询管理员（按帐号、密码） -->
+    <procedure id="findAdminByAccountAndPass" parameterClass="Admin" resultClass="Admin">
+        CALL proc_findAdminByAccountAndPass(#adminAccount#, #adminPass#);
+    </procedure>
+
+</sqlMap>

@@ -1,0 +1,36 @@
+.wrapper { width: 500px; }
+.wrapper dl a dt { width: 70px; }
+.wrapper dl a dd { width: 380px; }
+
+.wrapper dl a dt { font-size: 12px; color: #f173ac; }
+.wrapper dl a dd { font-size: 12px; color: #539EFF; }
+
+body {
+    background: url(../../images/icons/common/background.gif) center repeat;
+}
+.wrapper {
+    margin: 25px auto 100px;
+    background-color: #fff;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+.wrapper dl {
+    padding: 15px 10px;
+}
+.wrapper dl a {
+    display: block;
+    padding: 5px 0;
+    overflow: hidden;
+}
+.wrapper dl a:hover,
+.wrapper dl a:focus{
+    box-shadow: 0 0 3px #c8c8c8;
+}
+.wrapper dl a dt {
+    float: left;
+    text-align: right;
+}
+.wrapper dl a dd {
+    float: left; 
+    margin-left: 8px;
+}

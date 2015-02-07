@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 网站 -->
+    <typeAlias alias="WebsiteRecommend" type="com.webstar365.pojo.WebsiteRecommend" />
+    <typeAlias alias="SearchCondition" type="com.webstar365.pojo.SearchCondition" />
+    
+    <!-- 配置对象关系映射 -->
+    <resultMap id="WebsiteRecommendMap" class="WebsiteRecommend">
+        <result property="websiteId" column="websiteId" />        
+        <result property="websiteName" column="websiteName" />        
+        <result property="websiteDomain" column="websiteDomain" />        
+        <result property="websiteIntro" column="websiteIntro" />        
+        <result property="user" column="userId" select="findUserByUserId" />
+        <result property="admin" column="adminId" select="findAdminByAdminId" />
+        <result property="websiteCheckStatus" column="websiteCheckStatus" />        
+        <result property="websiteRecommendDateTime" column="websiteRecommendDateTime" />        
+        <result property="websiteCheckPassDateTime" column="websiteCheckPassDateTime" />        
+        <result property="websiteCheckFailReason" column="websiteCheckFailReason" />        
+    </resultMap>
+    
+    <!-- 配置SQL语句 -->
+    <!-- 查询推荐网站（按网站审核状态） -->
+    <procedure id="findWebsiteRecommendsByWebsiteCheckStatus" parameterClass="SearchCondition" resultMap="WebsiteRecommendMap">
+        CALL proc_findWebsiteRecommendsByWebsiteCheckStatus(
+                                              #websiteCheckStatus#,
+                                              #page.pageNo#,
+                                              #page.pageSize#
+        );
+    </procedure>
+    <!-- 查询推荐网站（按网站域名、用户编号） -->
+    <procedure id="findWebsiteRecommendByWebsiteDomainAndUserId" parameterClass="WebsiteRecommend" resultMap="WebsiteRecommendMap">
+        CALL proc_findWebsiteRecommendByWebsiteDomainAndUserId(
+                                                        #websiteDomain#,
+                                                        #userId#
+        );
+    </procedure>
+    <!-- 添加推荐网站 -->
+    <procedure id="addWebsiteRecommend" parameterClass="WebsiteRecommend" resultClass="long">
+        CALL proc_addWebsiteRecommend(
+                                #websiteName#,
+                                #websiteDomain#,
+                                #websiteIntro#,
+                                #userId#
+        );
+    </procedure>
+    <!-- 修改推荐网站的审核状态（按网站编号） -->
+    <procedure id="modifyWebsiteRecommendCheckStatusByWebsiteId" parameterClass="WebsiteRecommend" resultClass="long">
+        CALL proc_modifyWebsiteRecommendCheckStatusByWebsiteId(
+                                #websiteId#,
+                                #adminId#,
+                                #websiteCheckStatus#,
+                                #websiteCheckFailReason#
+        );
+    </procedure>
+    <!-- 统计网站推荐数量（按网站审核状态） -->
+    <procedure id="countWebsiteRecommendNumByWebsiteCheckStatus" parameterClass="int" resultClass="long">
+        CALL proc_countWebsiteRecommendNumByWebsiteCheckStatus(#websiteCheckStatus#);
+    </procedure>
+
+</sqlMap>

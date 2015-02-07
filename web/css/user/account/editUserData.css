@@ -1,0 +1,84 @@
+.wrapper { width: 550px; }
+.wrapper fieldset form div { width: 550px; }
+.wrapper fieldset form div label { width: 150px; height: 30px; line-height: 24px; }
+.wrapper fieldset form div.userSex label { line-height: 18px; }
+.wrapper fieldset form div.userFacePreview img { width: 120px; height: 120px; }
+.wrapper fieldset form div.userPersonalIntro textarea { width: 280px; height: 70px; }
+
+
+.wrapper fieldset legend { font-weight: bold; color: #5D0C7B; }
+.wrapper fieldset form div label { color: #52096C; text-align: right; }
+.wrapper fieldset form div.userPersonalIntro textarea { font-size: 12px; }
+.wrapper fieldset form div.userBirthday select { font-size: 12px; }
+.wrapper fieldset form div.userBirthday select option { font-size: 12px; }
+.wrapper fieldset form div.userArea select { font-size: 12px; }
+.wrapper fieldset form div.userArea select option { font-size: 12px; }
+.wrapper fieldset form .sure { font-size: 12px; color: #fff; }
+
+
+.wrapper {
+    margin: 50px auto;
+}
+.wrapper fieldset {
+    padding: 40px 0;
+    background-color: #eddef5;
+    border: 1px solid #AA87B8;
+}
+.wrapper fieldset legend {
+    margin-left: 30px;
+    padding: 10px 13px;
+    background-color: #e2c9ee;
+    border: 1px solid #79378B;
+}
+
+.wrapper fieldset form div {
+    float: left;
+    margin-bottom: 18px;
+    overflow: hidden;
+}
+.wrapper fieldset form div.userSex {
+    margin-bottom: 10px;
+}
+.wrapper fieldset form div.userFacePreview img {
+    display: block;
+    margin: 0 0 15px 95px;
+}
+
+.wrapper fieldset form div label {
+    float: left;
+    margin-right: 10px;
+}
+.wrapper fieldset form div input { 
+    margin-right: 10px;
+}
+.wrapper fieldset form div.userPersonalIntro textarea {
+    padding: 5px;
+}
+.wrapper fieldset form div.userBirthday select {  
+    padding: 2px 1px;
+}
+.wrapper fieldset form div.userArea {
+    margin-bottom: 20px;
+}
+.wrapper fieldset form div.userArea select {
+    padding: 2px 1px;
+}
+
+.wrapper fieldset form .sure {
+    margin-left: 382px;
+    padding: 9px 12px 7px;
+    background-color: #c77eb5;
+    border-radius: 2px;
+}
+.wrapper fieldset form .sure:hover,
+.wrapper fieldset form .sure:focus {
+    background-color: #f173ac;
+    box-shadow: 0px 0px 5px #f173ac;
+}
+.wrapper fieldset form .sure:active {
+    background-color: #c77eb5;
+}
+
+.allLv2Areas {
+    display: none;
+}

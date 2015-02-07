@@ -1,0 +1,112 @@
+.wrapper { width: 1000px; }
+.wrapper .main { width: 850px; }
+.wrapper .main form .website .row1 .websiteName input { width: 200px; }
+.wrapper .main form .website .row1 .websiteDomain input { width: 200px; }
+.wrapper .main form .website .row2 .websiteOwner input { width: 200px; }
+.wrapper .main form .website .row3 .websiteAttrs input.selectedAttrNames { width: 300px; }
+.wrapper .main form .website .row4 .websiteBriefIntro textarea { width: 600px; height: 45px; }
+
+.wrapper .main form .website div label { font-size: 12px; }
+.wrapper .main form .website div input { font-size: 12px; }
+.wrapper .main form .website div select { font-size: 12px; }
+.wrapper .main form .website div textarea { font-size: 12px; }
+.wrapper .main form .reset { font-size: 14px; }
+.wrapper .main form .add { font-size: 14px; }
+
+.wrapper {
+    margin: 20px auto 60px;
+    overflow: hidden;
+}
+.wrapper .main {
+    float: left;
+}
+.wrapper .main form {
+    margin: 16px 16px;
+}
+.wrapper .main form .website {
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #c8c8c8;
+    overflow: hidden;
+}
+.wrapper .main form .website h2 {
+    margin-bottom: 10px;
+}
+.wrapper .main form .website .row1,
+.wrapper .main form .website .row2,
+.wrapper .main form .website .row3,
+.wrapper .main form .website .row4 {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.wrapper .main form .website div div {
+    float: left;
+}
+.wrapper .main form .website .row1 .websiteDomain,
+.wrapper .main form .website .row2 .websiteEstablishDateTime,
+.wrapper .main form .website .row3 .websiteAttrs {
+    margin-left: 30px;    
+}
+.wrapper .main form .website .row3 .websiteCat {
+    padding-top: 5px;
+}
+.wrapper .main form .website div label {
+    margin-right: 0px;
+}
+.wrapper .main form .website div input {
+    padding: 2px 3px;
+    background-color: #ffffcd; 
+    border: 1px groove #c8c8c8;
+}
+.wrapper .main form .website div select {
+    padding: 2px 0;
+    background-color: #ffffcd;
+    border: 1px groove #c8c8c8;
+}
+.wrapper .main form .website div button {
+    padding: 4px 6px;
+}
+.wrapper .main form .website div textarea {
+    padding: 2px 3px;
+    background-color: #ffffcd;  
+    border: 1px groove #c8c8c8;
+}
+.wrapper .main form .reset {
+    float: left;
+    margin: 8px 0 0 660px;
+    padding: 5px 8px;
+}
+.wrapper .main form .add {
+    float: left;
+    margin: 8px 0 0 12px;
+    padding: 5px 8px;
+}
+
+.attrOption {
+    display: none;
+    position: fixed; left: 0; top: 0;
+    background: url(../../images/icons/common/shadow.png) repeat;
+}
+.attrOption ul {
+    width: 800px;
+    margin: 100px auto 0;
+    padding: 15px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.attrOption ul li {
+    float: left;
+    margin: 5px;
+    border: 1px solid #ccc;
+}
+.attrOption ul li a {
+    display: block;
+    padding: 7px 8px;
+}
+.attrOption button {
+    margin: 4px 0 0 5px;
+    padding: 5px;
+}
+.selectedAttrIds {
+    display: none;
+}

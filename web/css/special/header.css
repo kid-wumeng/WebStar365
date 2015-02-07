@@ -1,0 +1,55 @@
+.header .top {
+    background: url(../../images/icons/common/top.jpg) repeat-x; 
+}
+.header .top .logo {
+    width: 900px; height: 100px;
+    margin: 0 auto;
+    background: url(../../images/icons/common/logo.jpg) left no-repeat; 
+}
+.header .nav {
+    background: url(../../images/icons/common/nav.jpg) repeat-x;
+}
+.header .nav .menu{
+    width: 900px; height: 40px; line-height: 40px;
+    margin: 0 auto;
+    text-align: right;
+    vertical-align: middle;
+}
+.header .nav .menu span {
+    display: inline-block;
+    height: 24px; line-height: 24px;
+    margin-top: 8px;
+    margin-right: -7px;
+    padding: 0 7px;
+    font-size: 12px;
+    color: #ccc;
+}
+.header .nav .menu a {
+    display: inline-block;
+    height: 24px; line-height: 24px;
+    margin-top: 8px;
+    margin-right: -7px;
+    padding: 0 7px;
+    font-size: 12px;
+    color: #ccc;
+}
+.header .nav .menu a:hover,
+.header .nav .menu a:focus {
+    color: #fff;
+    box-shadow: 0 0 2px #fff;
+}
+.header .nav .menu a:active {
+    color: #ccc;
+    border-bottom: none;
+}
+.header .nav .menu a.home {
+    float: left;
+    margin-left: 30px;
+}
+.header .nav .menu a.register,
+.header .nav .menu a.logout {
+    margin-right: 31px;
+}
+.header .nav .menu a.logout {
+    margin-left: 4px;
+}

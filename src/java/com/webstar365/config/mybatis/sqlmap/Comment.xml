@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 网站 -->
+    <typeAlias alias="Comment" type="com.webstar365.pojo.Comment" />
+    <typeAlias alias="SearchCondition" type="com.webstar365.pojo.SearchCondition" />
+    
+    <!-- 配置对象关系映射 -->
+    <resultMap id="CommentMap" class="Comment">
+        <result property="commentId" column="commentId" />        
+        <result property="commentStar" column="commentStar" />        
+        <result property="commentContent" column="commentContent" />        
+        <result property="commentPublishDateTime" column="commentPublishDateTime" />        
+        <result property="commentLastEditDateTime" column="commentLastEditDateTime" />        
+        <result property="commentUser" column="userId" select="findUserByUserId" />
+        <result property="commentEchoNum" column="commentId" select="countEchoNumByCommentId" />
+    </resultMap>
+    <resultMap id="CommentWithWebsiteMap" class="Comment">
+        <result property="commentId" column="commentId" />        
+        <result property="commentStar" column="commentStar" />        
+        <result property="commentContent" column="commentContent" />        
+        <result property="commentPublishDateTime" column="commentPublishDateTime" />        
+        <result property="commentLastEditDateTime" column="commentLastEditDateTime" />        
+        <result property="commentWebsite" column="websiteId" select="findWebsiteByWebsiteId" />
+        <result property="commentUser" column="userId" select="findUserByUserId" />
+        <result property="commentEchoNum" column="commentId" select="countEchoNumByCommentId" />
+    </resultMap>
+
+    <!-- 配置SQL语句 -->
+    <!-- 查询评论（按评论编号） -->
+    <procedure id="findCommentByCommentId" parameterClass="long" resultMap="CommentWithWebsiteMap">
+        CALL proc_findCommentByCommentId(#commentId#);
+    </procedure>
+    <!-- 查询评论（按网站编号） -->
+    <procedure id="findCommentsByWebsiteId" parameterClass="SearchCondition" resultMap="CommentMap">
+        CALL proc_findCommentsByWebsiteId(
+                                     #websiteId#,
+                                     #page.pageNo#,
+                                     #page.pageSize#
+        );
+    <!-- 查询评论（按用户编号） -->
+    </procedure>
+    <procedure id="findCommentsByUserId" parameterClass="SearchCondition" resultMap="CommentWithWebsiteMap">
+        CALL proc_findCommentsByUserId(
+                                     #userId#,
+                                     #page.pageNo#,
+                                     #page.pageSize#
+        );
+    </procedure>
+    <!-- 查询评论（按网站编号、用户编号） -->
+    <procedure id="findCommentByWebsiteIdAndUserId" parameterClass="Comment" resultClass="Comment">
+        CALL proc_findCommentByWebsiteIdAndUserId(
+                                            #commentWebsite.websiteId#,
+                                            #commentUser.userId#
+        );
+    </procedure>
+    <!-- 查询最新评论（按网站编号） -->
+    <procedure id="findNewCommentsByWebsiteId" parameterClass="long" resultMap="CommentMap">
+        CALL proc_findNewCommentsByWebsiteId(#websiteId#);
+    </procedure>
+    <!-- 添加评论 -->
+    <procedure id="addComment" parameterClass="Comment" resultClass="long">
+        CALL proc_addComment(
+                        #commentStar#,
+                        #commentContent#,
+                        #commentWebsite.websiteId#,
+                        #commentUser.userId#
+        );
+    </procedure>
+    <!-- 修改评论 -->
+    <procedure id="modifyCommentByCommentId" parameterClass="Comment" resultClass="long">
+        CALL proc_modifyCommentByCommentId(
+                        #commentId#,
+                        #commentStar#,
+                        #commentContent#
+        );
+    </procedure>
+    <!-- 删除评论（按评论编号） -->
+    <procedure id="deleteCommentByCommentId" parameterClass="long" resultClass="long">
+        CALL proc_deleteCommentByCommentId(#commentId#);
+    </procedure>
+    <!-- 统计评论数量（按网站编号） -->
+    <procedure id="countCommentNumByWebsiteId" parameterClass="long" resultClass="long">
+        CALL proc_countCommentNumByWebsiteId(#websiteId#);
+    </procedure>
+    <!-- 统计评论数量（按用户编号） -->
+    <procedure id="countCommentNumByUserId" parameterClass="long" resultClass="long">
+        CALL proc_countCommentNumByUserId(#userId#);
+    </procedure>
+
+</sqlMap>

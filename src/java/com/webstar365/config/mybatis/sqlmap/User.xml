@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 网站分类 -->
+    <typeAlias alias="User" type="com.webstar365.pojo.User" />
+    <typeAlias alias="UserPassReset" type="com.webstar365.pojo.UserPassReset" />
+    
+    <!-- 配置对象关系映射 -->
+    
+    <!-- 配置SQL语句 -->
+    <!-- 查询正式用户（按用户编号）-->
+    <procedure id="findUserByUserId" parameterClass="long" resultClass="User">
+        CALL proc_findUserByUserId(#userId#);
+    </procedure>
+    <!-- 查询用户资料（按用户编号）-->
+    <procedure id="findUserDataByUserId" parameterClass="long" resultClass="User">
+        CALL proc_findUserDataByUserId(#userId#);
+    </procedure>
+    <!-- 查询正式用户、待验证用户（按用户帐号）-->
+    <procedure id="findUserByAccount" parameterClass="string" resultClass="User">
+        CALL proc_findUserByAccount(#userAccount#);
+    </procedure>
+    <!-- 查询正式用户（按用户帐号）-->
+    <procedure id="findUserByUserAccount" parameterClass="string" resultClass="User">
+        CALL proc_findUserByUserAccount(#userAccount#);
+    </procedure>
+    <!-- 查询正式用户、待验证用户（按用户昵称）-->
+    <procedure id="findUserByNickName" parameterClass="string" resultClass="User">
+        CALL proc_findUserByNickName(#userNickName#);
+    </procedure>
+    <!-- 查询待验证用户（按待验证用户编号）-->
+    <procedure id="findUserWaitValidateById" parameterClass="long" resultClass="User">
+        CALL proc_findUserWaitValidateById(#userId#);
+    </procedure>
+    <!-- 查询正式用户（按帐号、密码）-->
+    <procedure id="findUserByAccountAndPass" parameterClass="User" resultClass="User">
+        CALL proc_findUserByAccountAndPass(#userAccount#, #userPass#);
+    </procedure>
+    <!-- 查询待验证用户（按帐号、密码）-->
+    <procedure id="findUserWaitValidateByAccountAndPass" parameterClass="User" resultClass="User">
+        CALL proc_findUserWaitValidateByAccountAndPass(#userAccount#, #userPass#);
+    </procedure>
+    <!-- 查询用户编号（按评论编号）-->
+    <procedure id="findUserIdByCommentId" parameterClass="Long" resultClass="Long">
+        CALL proc_findUserIdByCommentId(#commentId#);
+    </procedure>
+    <!-- 查询用户密码重置邮件验证记录（按用户编号、验证字符串）-->
+    <procedure id="findUserPassResetByUserIdAndValidString" parameterClass="UserPassReset" resultClass="UserPassReset">
+        CALL proc_findUserPassResetByUserIdAndValidString(
+                                                     #userId#,
+                                                     #validString#
+        );
+    </procedure>    
+    <!-- 添加待验证用户 -->
+    <procedure id="addUserWaitValidate" parameterClass="User" resultClass="long">
+        CALL proc_addUserWaitValidate(
+                                  #userAccount#,
+                                  #userPass#,
+                                  #userNickName#,
+                                  #userEmail#
+        );
+    </procedure>
+    <!-- 添加正式用户（将待验证用户变为正式用户）-->
+    <procedure id="addUserByUserWaitValidate" parameterClass="User" resultClass="long">
+        CALL proc_addUserByUserWaitValidate(#userId#);
+    </procedure>
+    <!-- 添加用户密码重置邮件验证记录-->
+    <procedure id="addUserPassReset" parameterClass="UserPassReset" resultClass="long">
+        CALL proc_addUserPassReset(
+                                #userId#,
+                                #validString#,
+                                #mailSendDateTime#
+        );
+    </procedure>
+    <!-- 修改用户密码（按用户编号）-->
+    <procedure id="modifyUserPassByUserId" parameterClass="User" resultClass="long">
+        CALL proc_modifyUserPassByUserId(
+                                    #userId#,
+                                    #userPass#
+        );
+    </procedure>
+    <!-- 修改用户资料（按用户编号）-->
+    <procedure id="modifyUserDataByUserId" parameterClass="User" resultClass="long">
+        CALL proc_modifyUserDataByUserId(
+                                    #userId#,
+                                    #userPersonalIntro#,
+                                    #userSex#,
+                                    #userBirthday#,
+                                    #userArea.areaId#
+        );
+    </procedure>
+    <!-- 修改用户头像标志位（按用户编号）-->
+    <procedure id="modifyUserFaceFlagByUserId" parameterClass="User" resultClass="long">
+        CALL proc_modifyUserFaceFlagByUserId(
+                                    #userId#,
+                                    #userFaceFlag#
+        );
+    </procedure>
+    <!-- 修改用户密码重置的验证状态，全部设为无效（按用户编号）-->
+    <procedure id="modifyUserPassResetValidStatusByUserId" parameterClass="long" resultClass="long">
+        CALL proc_modifyUserPassResetValidStatusByUserId(#userId#);
+    </procedure>
+</sqlMap>

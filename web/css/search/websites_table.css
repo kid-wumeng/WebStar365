@@ -1,0 +1,85 @@
+.wrapper .main { width: 983px; }
+.wrapper .main table tr { width: 983px; }
+
+.wrapper .main table tr td.websiteName a { width: 170px; }
+.wrapper .main table tr td.websiteDomain a { width: 170px; }
+.wrapper .main table tr td.websiteCat span { width: 52px; }
+.wrapper .main table tr td.websiteAttrs span { width: 270px; }
+.wrapper .main table tr td.websiteScore span { width: 40px; }
+.wrapper .main table tr td.websiteDetailedIntro a { width: 75px; }
+.wrapper .main table tr td.enter a { width: 60px;}
+
+
+.wrapper .main table tr th span { color: #4a4a4a; }
+.wrapper .main table tr td.websiteName a { color: #4a4a4a; }
+.wrapper .main table tr td.websiteDomain a { font-family: Verdana, Geneva, sans-serif; color: #4a4a4a; }
+.wrapper .main table tr td.websiteCat { text-align: center; }
+.wrapper .main table tr td.websiteScore { text-align: center; }
+.wrapper .main table tr td.websiteCat span { color: #4a4a4a; }
+.wrapper .main table tr td.websiteAttrs span { color: #4a4a4a; }
+.wrapper .main table tr td.websiteDetailedIntro a { color: #4a4a4a; }
+.wrapper .main table tr td.enter a { color: #4a4a4a; }
+.wrapper .main table tr td.websiteDetailedIntro { text-align: center; }
+.wrapper .main table tr td.enter { text-align: center; }
+.wrapper .main table tr td span { font-size: 12px; }
+.wrapper .main table tr td a { font-size: 12px; }
+.wrapper .main table tr.star0 td span { color: #000; }
+.wrapper .main table tr.star0 td a { color: #000; }
+.wrapper .main table tr td.websiteScore span { font-family: Verdana, Geneva, sans-serif; }
+
+
+.wrapper .main {
+    background-color: #f5f5f5;
+}
+.wrapper .main table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-top: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c8;
+}
+.wrapper .main table tr th {
+    padding: 8px 0 7px;
+    border-top: 1px solid #c8c8c8;
+}
+.wrapper .main table tr th.th_websiteName {
+    border-left: none;
+}
+.wrapper .main table tr.odd_true {
+    background-color: #fbfbfb;
+}
+.wrapper .main table tr.odd_false {
+    background-color: #f5f5f5;
+}
+.wrapper .main table tr td {
+    border: 1px solid #e2e2e2;
+    border-bottom: none;
+}
+.wrapper .main table tr td.websiteName {
+    border-left: none;
+}
+.wrapper .main table tr td.enter {
+    border-right: none;
+}
+.wrapper .main table tr th span{ 
+    display: block;
+}
+.wrapper .main table tr td span{ 
+    display: block;
+    padding: 8px 10px 7px;
+}
+.wrapper .main table tr td.websiteName span {
+    display: block;
+    word-wrap:break-word;  /* 控制span换行 */
+}
+.wrapper .main table tr td.websiteDomain span {
+    display: block;
+    word-wrap:break-word;  /* 控制span换行 */
+}
+.wrapper .main table tr td a{ 
+    display: block;
+    padding: 8px 10px 7px;
+}
+.wrapper .main table tr td.enter a:hover,
+.wrapper .main table tr td.enter a:focus {
+    text-shadow: 0px 0px 1px #4a4a4a;
+}

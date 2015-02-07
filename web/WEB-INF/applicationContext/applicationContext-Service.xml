@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 路径：web/WEB-INF/ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <!-- 分类Service -->
+    <bean id="catService" class="com.webstar365.service.impl.CatServiceImpl">
+        <property name="catDAO" ref="catDAO" />
+    </bean>
+    <!-- 属性Service -->
+    <bean id="attrService" class="com.webstar365.service.impl.AttrServiceImpl">
+        <property name="attrDAO" ref="attrDAO" />
+    </bean>
+    <!-- 属性近义词Service -->
+    <bean id="attrSynonymService" class="com.webstar365.service.impl.AttrSynonymServiceImpl">
+        <property name="attrSynonymDAO" ref="attrSynonymDAO" />
+    </bean>
+    <!-- 网站Service -->
+    <bean id="websiteService" class="com.webstar365.service.impl.WebsiteServiceImpl">
+        <property name="websiteDAO" ref="websiteDAO" />
+        <property name="userActDAO" ref="userActDAO" />
+    </bean>
+    <!-- 评论Service -->
+    <bean id="commentService" class="com.webstar365.service.impl.CommentServiceImpl">
+        <property name="commentDAO" ref="commentDAO" />
+        <property name="userDAO" ref="userDAO" />
+    </bean>
+    <!-- 回应Service -->
+    <bean id="echoService" class="com.webstar365.service.impl.EchoServiceImpl">
+        <property name="echoDAO" ref="echoDAO" />
+    </bean>
+    <!-- 文章Service -->
+    <bean id="articleService" class="com.webstar365.service.impl.ArticleServiceImpl">
+        <property name="articleDAO" ref="articleDAO" />
+    </bean>
+    <!-- 用户Service -->
+    <bean id="userService" class="com.webstar365.service.impl.UserServiceImpl">
+        <property name="userDAO" ref="userDAO" />
+        <property name="areaDAO" ref="areaDAO" />
+    </bean>
+    <!-- 地区Service -->
+    <bean id="areaService" class="com.webstar365.service.impl.AreaServiceImpl">
+        <property name="areaDAO" ref="areaDAO" />
+    </bean>
+    <!-- 管理员Service -->
+    <bean id="adminService" class="com.webstar365.service.impl.AdminServiceImpl">
+        <property name="adminDAO" ref="adminDAO" />
+    </bean>
+    <!-- 公告Service -->
+    <bean id="noticeService" class="com.webstar365.service.impl.NoticeServiceImpl">
+        <property name="noticeDAO" ref="noticeDAO" />
+    </bean>
+    <!-- 上传Service -->
+    <bean id="uploadService" class="com.webstar365.service.impl.UploadServiceImpl" scope="prototype">
+        <property name="userDAO" ref="userDAO" />
+    </bean>
+    <!-- 邮件Service -->
+    <bean id="mailService" class="com.webstar365.service.impl.MailServiceImpl">
+        <property name="newUserValidMail" ref="newUserValidMail" />
+    </bean>
+
+</beans>

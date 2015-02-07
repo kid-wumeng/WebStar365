@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    
+    <!-- 配置类别名 -->
+    <!-- 网站属性 -->
+    <typeAlias alias="AttrSynonym" type="com.webstar365.pojo.AttrSynonym" />
+    
+    <!-- 配置对象关系映射 -->
+
+    <!-- 配置SQL语句 -->
+    <!-- 查询属性近义词（按属性近义词编号） -->
+    <procedure id="findAttrSynonymByAttrSynonymId" parameterClass="long" resultClass="AttrSynonym">
+        CALL proc_findAttrSynonymByAttrSynonymId(#attrSynonymId#);
+    </procedure>
+    <!-- 查询属性近义词（按属性编号） -->
+    <procedure id="findAttrSynonymsByAttrId" parameterClass="long" resultClass="AttrSynonym">
+        CALL proc_findAttrSynonymsByAttrId(#attrId#);
+    </procedure>
+    <!-- 添加属性近义词 -->
+    <procedure id="addAttrSynonym" parameterClass="AttrSynonym" resultClass="long">
+        CALL proc_addAttrSynonym(
+                            #attrId#, 
+                            #attrSynonymName#
+        );
+    </procedure>
+    <!-- 修改属性近义词（按属性近义词编号） -->
+    <procedure id="modifyAttrSynonymByAttrSynonymId" parameterClass="AttrSynonym" resultClass="long">
+        CALL proc_modifyAttrSynonymByAttrSynonymId(
+                                               #attrSynonymId#,
+                                               #attrSynonymName#
+        );
+    </procedure>
+    <!-- 删除属性近义词（按属性近义词编号） -->
+    <procedure id="deleteAttrSynonymByAttrSynonymId" parameterClass="long" resultClass="long">
+        CALL proc_deleteAttrSynonymByAttrSynonymId(#attrSynonymId#);
+    </procedure>
+
+</sqlMap>

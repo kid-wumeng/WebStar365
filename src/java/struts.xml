@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 路径：src/java/ -->
+
+<struts>
+
+    <constant name="struts.multipart.maxSize" value="17340032" />
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+    
+    <include file="struts-Special.xml" />
+    <include file="struts-Search.xml" />
+    <include file="struts-List.xml" />
+    <include file="struts-Website.xml" />
+    <include file="struts-Account.xml" />
+    <include file="struts-User.xml" />
+    <include file="struts-Admin.xml" />
+    
+</struts>

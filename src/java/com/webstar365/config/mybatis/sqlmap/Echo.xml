@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 网站 -->
+    <typeAlias alias="Echo" type="com.webstar365.pojo.Echo" />
+    <typeAlias alias="SearchCondition" type="com.webstar365.pojo.SearchCondition" />
+    
+    <!-- 配置对象关系映射 -->
+    <resultMap id="EchoMap" class="Echo">
+        <result property="echoId" column="echoId" />        
+        <result property="echoContent" column="echoContent" />        
+        <result property="echoPublishDateTime" column="echoPublishDateTime" />        
+        <result property="commentId" column="commentId" />        
+        <result property="echoUser" column="userId" select="findUserByUserId" />
+    </resultMap>
+
+    <!-- 配置SQL语句 -->
+    <!-- 查询回应（按评论编号） -->
+    <procedure id="findEchoesByCommentId" parameterClass="searchCondition" resultMap="EchoMap">
+        CALL proc_findEchoesByCommentId(
+                                   #commentId#,
+                                   #page.pageNo#,
+                                   #page.pageSize#
+        );
+    </procedure>
+    <!-- 添加回应 -->
+    <procedure id="addEcho" parameterClass="Echo" resultClass="long">
+        CALL proc_addEcho(
+                     #echoContent#,
+                     #commentId#,
+                     #userId#
+        );
+    </procedure>
+    <!-- 统计回应数量（按评论编号） -->
+    <procedure id="countEchoNumByCommentId" parameterClass="long" resultClass="long">
+        CALL proc_countEchoNumByCommentId(#commentId#);
+    </procedure>
+
+</sqlMap>

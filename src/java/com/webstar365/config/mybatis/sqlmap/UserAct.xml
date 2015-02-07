@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 管理员 -->
+    <typeAlias alias="UserAct" type="com.webstar365.pojo.UserAct" />
+    
+    <!-- 配置对象关系映射 -->
+    
+    <!-- 配置SQL语句 -->
+    <!-- 添加用户行为（按关键词搜索网站） -->
+    <procedure id="addUserAct_searchWebsitesByKeywords" parameterClass="UserAct">
+        CALL proc_addUserAct_searchWebsitesByKeywords(
+                                                 #userId#, 
+                                                 #keywords#
+        );
+    </procedure>
+
+</sqlMap>

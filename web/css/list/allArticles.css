@@ -1,0 +1,63 @@
+.wrapper { width: 550px; }
+.wrapper .articles li .articleTitle { width: 300px; height: 14px; }
+.wrapper .page .targetPageNo input { width: 24px; height: 24px; }
+
+
+.wrapper .articles li .articleTitle { font-weight: bold; color: #1d953f; }
+.wrapper .articles li .articlePublishDateTime { color: #999; }
+.wrapper .page .pageButton:hover,
+.wrapper .page .pageButton:focus { color: #fff; }
+.wrapper .page .pageButton:active { color: #666; }
+.wrapper .page .targetPageNo input { text-align: center; }
+
+
+body {
+    background: url(../../images/icons/common/background.gif) center repeat;
+}
+.wrapper {
+    margin: 25px auto;
+    background-color: #fff;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+.wrapper .articles {
+    margin: 20px;
+}
+.wrapper .articles li {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-bottom: 7px;
+    border-bottom: 1px dashed #c8c8c8;
+}
+.wrapper .articles li .articleTitle {
+    float: left;
+    overflow: hidden;
+}
+.wrapper .articles li .articlePublishDateTime {
+    float: right;
+}
+
+.wrapper .page {
+    padding: 15px;
+    text-align: right;
+    background-color: #F2F2F2;
+    clear: left; 
+}
+.wrapper .page .pageButton {
+    margin-right: 3px;
+    padding: 6px 8px;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+.wrapper .page .pageButton:hover,
+.wrapper .page .pageButton:focus {
+    background-color: #74787c;
+    border: 1px solid #74787c;
+}
+.wrapper .page .pageButton:active {
+    background: none;
+    border: 1px solid #666;
+}
+.wrapper .page .pageNoAndNum {
+    margin: 0 15px 0 10px;
+}

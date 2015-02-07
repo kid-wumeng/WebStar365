@@ -1,0 +1,102 @@
+.wrapper { width: 550px; }
+.wrapper fieldset .note { width: 150px; height: 120px; }
+.wrapper fieldset form div.userAccount label,
+.wrapper fieldset form div.userPass label { width: 45px; height: 30px; line-height: 28px; }
+.wrapper fieldset form div.userAccount input,
+.wrapper fieldset form div.userPass input { width: 250px; height: 26px; }
+.wrapper fieldset form div.rememberMe { height: 40px; line-height: 40px; }
+.wrapper fieldset form div.rememberMe input { height: 40px; line-height: 40px; }
+.wrapper fieldset form div.rememberMe label{ width: 45px; height: 40px; line-height: 40px;  }
+
+
+.wrapper fieldset legend { font-weight: bold; color: #5D0C7B; }
+.wrapper fieldset .note div span, 
+.wrapper fieldset .note div a { font-size: 12px; color: #3a3a3a; } 
+.wrapper fieldset form div.userAccount label,
+.wrapper fieldset form div.userPass label { text-align: right; color: #3a3a3a; }
+.wrapper fieldset form div.userAccount input,
+.wrapper fieldset form div.userPass input { font-size: 12px; color: #4a4a4a; }
+.wrapper fieldset form .login { font-size: 12px; color: #fff; }
+
+.wrapper {
+    margin: 50px auto;
+}
+
+.wrapper fieldset {
+    padding: 20px 10px;
+    background-color: #eddef5;
+    border: 1px solid #AA87B8;
+    overflow: hidden;
+}
+.wrapper fieldset legend {
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #e2c9ee;
+    border: 1px solid #79378B;
+}
+.wrapper fieldset .note {
+    float: left;
+    padding-left: 7px;
+    border-right: 1px solid #fff;
+}
+.wrapper fieldset .note div span {
+    display: block;
+    margin: 7px 0 5px 20px;
+}
+.wrapper fieldset .note div a {
+    display: block;
+    margin:0 0 15px 20px;
+}
+.wrapper fieldset form {
+    float: right;
+}
+.wrapper fieldset form div.userAccount,
+.wrapper fieldset form div.userPass,
+.wrapper fieldset form div.rememberMe {
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.wrapper fieldset form div.userAccount label,
+.wrapper fieldset form div.userPass label {
+    float: left;
+    margin-right: 10px;
+}
+.wrapper fieldset form div.userAccount input,
+.wrapper fieldset form div.userPass input {
+    float: left;
+    margin-right: 40px;
+    padding: 1px 0 0 4px;
+}
+.wrapper fieldset form div.rememberMe {
+    float: left;
+    margin: 5px 0 0 186px;
+    overflow: hidden;
+}
+.wrapper fieldset form div.rememberMe input {
+    float: left;
+}
+.wrapper fieldset form div.rememberMe label {
+    display: block;
+    float: left;
+    margin-left: 5px;
+}
+
+.wrapper fieldset form .login { 
+    display: block;
+    float: left;
+    margin: 11px 0 0 10px;
+    padding: 7px 13px 6px 14px;
+    background-color: #c77eb5;
+    border-radius: 2px;
+}
+.wrapper fieldset form .login:hover,
+.wrapper fieldset form .login:focus {
+    background-color: #f173ac;
+    box-shadow: 0px 0px 5px #f173ac;
+}
+.wrapper fieldset form .login:active {
+    background-color: #c77eb5;
+}
+.sendUserValidMail {
+    display: block;
+}

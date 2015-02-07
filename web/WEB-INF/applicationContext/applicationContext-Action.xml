@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 路径：web/WEB-INF/ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <!-- 特殊Action -->
+    <bean id="specialAction" class="com.webstar365.action.SpecialAction">
+        <property name="articleService" ref="articleService" />
+        <property name="attrService" ref="attrService" />
+    </bean>    
+    <!-- 目录Action -->
+    <bean id="listAction" class="com.webstar365.action.ListAction">
+        <property name="catService" ref="catService" />
+        <property name="attrService" ref="attrService" />
+        <property name="articleService" ref="articleService" />
+        <property name="page" ref="page" />
+    </bean>    
+    <!-- 搜索Action -->
+    <bean id="searchAction" class="com.webstar365.action.SearchAction"  scope="prototype">
+        <property name="catService" ref="catService" />
+        <property name="attrService" ref="attrService" />
+        <property name="websiteService" ref="websiteService" />
+        <property name="page" ref="page" />
+    </bean>
+    <!-- 网站Action -->
+    <bean id="websiteAction" class="com.webstar365.action.WebsiteAction">
+        <property name="websiteService" ref="websiteService" />
+        <property name="commentService" ref="commentService" />
+        <property name="echoService" ref="echoService" />
+        <property name="comment" ref="comment" />
+        <property name="page" ref="page" />
+    </bean>
+    <!-- 帐号Action -->
+    <bean id="accountAction" class="com.webstar365.action.AccountAction">
+        <property name="adminService" ref="adminService" />
+        <property name="userService" ref="userService" />
+        <property name="mailService" ref="mailService" />
+    </bean>
+    <!-- 用户Action -->
+    <bean id="userAction" class="com.webstar365.action.UserAction" scope="prototype">
+        <property name="websiteService" ref="websiteService" />
+        <property name="commentService" ref="commentService" />
+        <property name="echoService" ref="echoService" />
+        <property name="userService" ref="userService" />
+        <property name="areaService" ref="areaService" />
+        <property name="uploadService" ref="uploadService" />
+        <property name="page" ref="page" />
+    </bean>
+    <!-- 管理员Action -->
+    <bean id="adminAction" class="com.webstar365.action.AdminAction" scope="prototype">
+        <property name="catService" ref="catService" />
+        <property name="attrService" ref="attrService" />
+        <property name="attrSynonymService" ref="attrSynonymService" />
+        <property name="websiteService" ref="websiteService" />
+        <property name="uploadService" ref="uploadService" />
+        <property name="adminService" ref="adminService" />
+        <property name="noticeService" ref="noticeService" />
+        <property name="page" ref="page" />
+    </bean>
+
+</beans>

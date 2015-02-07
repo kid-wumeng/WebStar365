@@ -1,0 +1,45 @@
+.wrapper { width: 500px; }
+.wrapper fieldset p { line-height: 20px; }
+
+
+.wrapper fieldset legend { font-weight: bold; color: #5D0C7B; }
+.wrapper fieldset p { font-size: 14px; color: #8C63A4; }
+.wrapper fieldset a { font-size: 12px; color: #fff; }
+
+
+body {
+    background: url(../../images/icons/common/background.gif) center repeat;
+}
+
+.wrapper {
+    margin: 150px auto;
+}
+.wrapper fieldset {
+    padding: 25px 10px 30px 10px;
+    text-align: center;
+    background-color: #eddef5;
+    border: 1px solid #AA87B8;
+    overflow: hidden;
+}
+.wrapper fieldset legend {
+    margin-left: 20px;
+    padding: 10px 13px;
+    background-color: #e2c9ee;
+    border: 1px solid #79378B;
+}
+.wrapper fieldset p.errorReason {
+    margin-bottom: 20px;
+}
+.wrapper fieldset a {
+    padding: 9px 14px 7px;
+    background-color: #c77eb5;
+    border-radius: 2px;
+}
+.wrapper fieldset a:hover,
+.wrapper fieldset a:focus {
+    background-color: #f173ac;
+    box-shadow: 0px 0px 5px #f173ac;
+}
+.wrapper fieldset a:active {
+    background-color: #c77eb5;
+}

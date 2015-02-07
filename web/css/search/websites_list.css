@@ -1,0 +1,100 @@
+.wrapper .main hr { width: 960px; }
+.wrapper .main .website .websiteCover { width: 220px; height: 140px;  }
+.wrapper .main .website .websiteCover img { width: 220px; height: 140px; }
+.wrapper .main .website .row1 { width: 700px; height: 22px; line-height: 22px; }
+.wrapper .main .website .row2 { width: 700px; height: 22px; line-height: 22px; }
+.wrapper .main .website .row2 .websiteScore { height: 22px; line-height: 20px; }
+.wrapper .main .website .row2 .websiteDetails { height: 22px; line-height: 20px; }
+.wrapper .main .website .websiteBriefIntro { width: 700px; height: 67px; }
+.wrapper .main .website .websiteBriefIntro p { line-height: 18px; }
+.wrapper .main .website .row3 { width: 700px; height: 18px; line-height: 18px; }
+
+
+.wrapper .main .website .row1 .websiteName { font-size: 12px; color: #843900; }
+.wrapper .main .website .row1 .websiteDomain { font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: #843900; }
+.wrapper .main .website .row2 .websiteStar .lackCommentNum { font-size: 12px; color: #888; }
+.wrapper .main .website .row2 .websiteScore { font-size: 12px; }
+.wrapper .main .website .row2 .websiteDetails { font-size: 14px; color: #AF4A92; }
+.wrapper .main .website .websiteBriefIntro p { font-size: 12px; color: #555; }
+.wrapper .main .website .row3 .websiteCat a { font-size: 12px; color: #fff; }
+.wrapper .main .website .row3 .websiteAttrs a { font-size: 12px; color: #7D9EC0; }
+
+
+.wrapper .hr1 {
+    margin: 0 auto;
+    border: none;
+    border-bottom: 1px dotted #aaa;
+} 
+.wrapper .main {
+    background-color: #f2f2f2;
+}
+
+.wrapper .main .website {
+    padding: 15px 17px;
+    background: url(../../images/icons/common/bg_list_website.jpg) left bottom repeat-x #F2F2F2;
+    overflow: hidden;
+}
+.wrapper .main hr {
+    margin: 0 auto;
+    border: none;
+    border-bottom: 1px dotted #aaa;
+}
+/* 网站封面Div */
+.wrapper .main .website .websiteCover {
+    float: left; 
+    margin-right: 13px;
+    text-align: center;
+    vertical-align: bottom;
+}
+/* 第一行 */
+.wrapper .main .website .row1 {
+    float: left; 
+    padding-right: 3px;
+}
+.wrapper .main .website .row1 .websiteName {
+    margin-right: -2px;
+}
+/* 第二行 */
+.wrapper .main .website .row2 {
+    float: left; 
+}
+.wrapper .main .website .row2 .websiteStar .lackCommentNum {
+    margin-left: 4px;
+}
+.wrapper .main .website .row2 .websiteDetails {
+    display: block;
+    float: right;
+}
+.wrapper .main .website .row2 .websiteDetails:hover,
+.wrapper .main .website .row2 .websiteDetails:focus { 
+    text-shadow: 1px 1px 1px #C57CAC;
+}
+.wrapper .main .website .row2 .websiteDetails:active {
+    text-shadow: none;
+}
+.wrapper .main .website .websiteBriefIntro {
+    float: left;
+    padding: 1px 0 1px 4px;
+    overflow: hidden;
+}
+/* 第三行 */
+.wrapper .main .website .row3 {
+    float: left; 
+    padding: 3px 0 0 4px;
+}
+.wrapper .main .website .row2 .websiteStar {
+    display: block;
+    float: left;
+}
+.wrapper .main .website .row2 .websiteScore {
+    display: block;
+    margin-left: 3px;
+    float: left;
+}
+.wrapper .main .website .row3 .websiteCat a { 
+    padding: 6px 6px 4px 6px;
+}
+.wrapper .main .website .row3 .websiteAttrs a { 
+    padding: 5px 5px 3px 5px;
+    border: 1px solid #7D9EC0;
+}

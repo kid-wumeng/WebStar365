@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-2.dtd"> 
+
+<sqlMap>
+    <!-- 配置类别名 -->
+    <!-- 网站属性 -->
+    <typeAlias alias="Attr" type="com.webstar365.pojo.Attr" />
+    
+    <!-- 配置对象关系映射 -->
+
+    <!-- 配置SQL语句 -->
+    <!-- 查询属性（按属性编号） -->
+    <procedure id="findAttrByAttrId" parameterClass="long" resultClass="Attr">
+        CALL proc_findAttrByAttrId(#attrId#);
+    </procedure>
+    <!-- 查询全部属性 -->
+    <procedure id="findAllAttrs" resultClass="Attr">
+        CALL proc_findAllAttrs();
+    </procedure>
+    <!-- 查询热门属性 -->
+    <procedure id="findHotAttrs" resultClass="Attr">
+        CALL proc_findHotAttrs();
+    </procedure>
+    <!-- 查询属性（按网站编号） -->
+    <procedure id="findAttrsByWebsiteId" parameterClass="long" resultClass="Attr">
+        CALL proc_findAttrsByWebsiteId(#websiteId#);
+    </procedure>
+    <!-- 添加属性 -->
+    <procedure id="addAttr" parameterClass="Attr" resultClass="long">
+        CALL proc_addAttr(#attrName#, #attrIntro#);
+    </procedure>
+    <!-- 修改属性名（按属性编号） -->
+    <procedure id="modifyAttrNameByAttrId" parameterClass="Attr">
+        CALL proc_modifyAttrNameByAttrId(#attrId#, #attrName#);
+    </procedure>
+    <!-- 修改属性介绍（按属性编号） -->
+    <procedure id="modifyAttrIntroByAttrId" parameterClass="Attr">
+        CALL proc_modifyAttrIntroByAttrId(#attrId#, #attrIntro#);
+    </procedure>
+    <!-- 删除属性（按属性编号） -->
+    <procedure id="deleteAttrByAttrId" parameterClass="long">
+        CALL proc_deleteAttrByAttrId(#attrId#);
+    </procedure>
+
+</sqlMap>

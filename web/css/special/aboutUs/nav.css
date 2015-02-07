@@ -1,0 +1,37 @@
+.nav_aboutUs ul li a:hover, 
+.nav_aboutUs ul li a:focus { color: #fff; }
+.nav_aboutUs ul li a:active { color: #000; }
+
+
+.nav_aboutUs {
+    margin-bottom: 30px;
+}
+
+.nav_aboutUs ul {
+    overflow: hidden;
+}
+.nav_aboutUs ul li a {
+    float: left;
+    margin-right: 10px;
+    padding: 7px 12px;
+    border-radius: 2px;
+}
+.nav_aboutUs ul li a:hover, 
+.nav_aboutUs ul li a:focus {
+    background-color: #9d9087;
+}
+.nav_aboutUs ul li a:active {
+    background-color: #d1c7b7;
+} 
+.nav_aboutUs hr {
+    margin-top: 15px;
+    border: none;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.outline .outline,
+.history .history,
+.contact .contact,
+.userAgree .userAgree {
+    background-color: #d1c7b7;
+}

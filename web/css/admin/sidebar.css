@@ -1,0 +1,24 @@
+.sidebar { width: 150px; min-height: 600px; }
+
+.sidebar {
+    float: left;
+    margin-bottom: -10000px;
+    padding-bottom: 10000px;
+    background-color: #F2F2F2;
+}
+
+.sidebar ul {
+    margin: 8px;
+}
+.sidebar ul li {
+    margin: 5px 0;
+}
+.sidebar ul li a {
+    font-size: 14px;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a:focus,
+.sidebar ul li a:active {
+    color: blue;
+    text-decoration: underline;
+}

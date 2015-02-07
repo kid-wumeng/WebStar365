@@ -1,0 +1,18 @@
+.header { width: 1000px; }
+
+.header h1 { font-size: 24px; color: #fff; }
+.header .row1 .adminName { font-size: 14px; color: #fff; }
+.header .row1 .adminLv { font-size: 14px; color: #fff; }
+
+.header {
+    float: left;
+    padding: 10px 10px;
+    background-color: #000;
+}
+
+.header h1 {
+    margin-bottom: 7px;
+}
+.header .row1 .adminName {
+    margin-left: 2px;
+}

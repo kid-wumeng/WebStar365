@@ -1,0 +1,22 @@
+.wrapper { width: 800px; }
+.wrapper .main ul li { line-height: 24px; }
+
+.wrapper .main ul li span { font-weight: bold; }
+
+
+body {
+    background: url(../../../images/icons/common/background.gif) center repeat;
+}
+.wrapper {
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 0 10px #c8c8c8;
+}
+.wrapper .main { 
+    margin: 0 7px;
+}
+.wrapper .main ul li { 
+    margin-bottom: 10px;
+}
